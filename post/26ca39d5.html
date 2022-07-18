@@ -1,0 +1,587 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Calculus-II-notes-chapt2 | Yunzinan</title><meta name="keywords" content="微积分"><meta name="author" content="oys"><meta name="copyright" content="oys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="6 重积分 6.1 二重积分的概念和性质 二重积分的概念与性质 \[ divide\ D\ into\ D_i\ deliberately. set \lambda &#x3D; \max{\{D_i的直径\}} . 任取D_i内一点(\xi_i, \eta_i)的值代表整个小区域的近似值,\\ 计算黎曼和\ \sum_{i &#x3D; 1}^{n}f(\xi_i, \eta_i)\Delta\sigm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Calculus-II-notes-chapt2">
+<meta property="og:url" content="https://yunzinan.github.io/post/26ca39d5.html">
+<meta property="og:site_name" content="Yunzinan">
+<meta property="og:description" content="6 重积分 6.1 二重积分的概念和性质 二重积分的概念与性质 \[ divide\ D\ into\ D_i\ deliberately. set \lambda &#x3D; \max{\{D_i的直径\}} . 任取D_i内一点(\xi_i, \eta_i)的值代表整个小区域的近似值,\\ 计算黎曼和\ \sum_{i &#x3D; 1}^{n}f(\xi_i, \eta_i)\Delta\sigm">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg">
+<meta property="article:published_time" content="2022-06-11T08:56:57.000Z">
+<meta property="article:modified_time" content="2022-06-11T09:03:57.021Z">
+<meta property="article:author" content="oys">
+<meta property="article:tag" content="微积分">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yunzinan.github.io/post/26ca39d5"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Calculus-II-notes-chapt2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-11 17:03:57'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Yunzinan</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Calculus-II-notes-chapt2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-11T08:56:57.000Z" title="发表于 2022-06-11 16:56:57">2022-06-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-11T09:03:57.021Z" title="更新于 2022-06-11 17:03:57">2022-06-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Maths/">Maths</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Calculus-II-notes-chapt2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="重积分">6 重积分</h2>
+<h3 id="二重积分的概念和性质">6.1 二重积分的概念和性质</h3>
+<h4 id="二重积分的概念与性质">二重积分的概念与性质</h4>
+<p><span class="math display">\[
+divide\ D\ into\ D_i\ deliberately. set \lambda = \max{\{D_i的直径\}} .
+任取D_i内一点(\xi_i, \eta_i)的值代表整个小区域的近似值,\\ 计算黎曼和\
+\sum_{i = 1}^{n}f(\xi_i, \eta_i)\Delta\sigma_i.\\
+let\ \lambda \rightarrow 0, V = \lim_{\lambda\rightarrow0}\sum_{i =
+1}^{n}f(\xi_i,
+\eta_i)\Delta\sigma_i\stackrel{\mathrm{def}}{=}\displaystyle \iint_{D}
+f(x,y)d\sigma
+\]</span></p>
+<h4 id="二重积分的可积条件">二重积分的可积条件</h4>
+<ul>
+<li>连续</li>
+<li>上有界 间断点分布在D内有限条光滑曲线上</li>
+</ul>
+<h4 id="性质">性质</h4>
+<ul>
+<li>常数可以提出来</li>
+<li>积分区域的可加性</li>
+<li>保向性</li>
+<li>==估值性质==
+<ul>
+<li><span class="math inline">\(m \leq {1\over \sigma(D)}\displaystyle
+\iint f(x,y)d\sigma \leq M\)</span></li>
+</ul></li>
+<li>绝对值性质
+<ul>
+<li><span class="math inline">\(|\displaystyle \iint f(x,y)d\sigma| \le
+\iint |f(x,y|d\sigma\)</span></li>
+</ul></li>
+<li>对称性质（利用被积函数奇偶性）</li>
+</ul>
+<p>定理 (中值定理 1) 设 <span class="math inline">\(D \subset
+\mathbb{R}^{2}\)</span> 为有界闭区域, 函数 <span
+class="math inline">\(f(x, y), g(x, y)\)</span> 在 <span
+class="math inline">\(D\)</span> 上连续, 且对任意的 <span
+class="math inline">\((x, y) \in D, g(x, y) \geqslant 0(\)</span> 或
+<span class="math inline">\(\leqslant 0)\)</span>, 则存在 <span
+class="math inline">\((\xi, \eta) \in D\)</span>, 使得 <span
+class="math display">\[
+\iint_{D} f(x, y) g(x, y) \mathrm{d} \sigma=f(\xi, \eta) \iint_{D} g(x,
+y) \mathrm{d} \sigma
+\]</span> 特别的, 取 <span class="math inline">\(g(x, y) \equiv
+1\)</span>, 有 定理 (中值定理 2) 设 <span class="math inline">\(D
+\subset \mathbb{R}^{2}\)</span> 为有界闭区域, 函数 <span
+class="math inline">\(f(x, y)\)</span> 在 <span
+class="math inline">\(D\)</span> 上连续, 则存在 <span
+class="math inline">\((\xi, \eta) \in D\)</span>, 使得 <span
+class="math display">\[
+\iint_{D} f(x, y) \mathrm{d} \sigma=f(\xi, \eta) \cdot \sigma(D)
+\]</span></p>
+<h3 id="二重积分的计算">6.2 二重积分的计算</h3>
+<h4 id="累次积分法">6.2.1 累次积分法</h4>
+<p>根据积分区域的形式，选择累次积分的次序，既要关注积分区域的简便划分，又要注意积分过程是否简便。</p>
+<h5
+id="积分区域形如dxyvarphi_1xle-yle-varphi_2xale-xle-b">积分区域形如<span
+class="math inline">\(D=\{(x,y)|\varphi_1(x)\le y\le \varphi_2(x),a\le
+x\le b\}\)</span></h5>
+<ul>
+<li>注：这也就告诉我们：固定一个x,有明确的y的变化的上下限，所以可以先对y积分，然后得到关于x的一重积分</li>
+</ul>
+<p>二重积分的计算公式 <span class="math display">\[
+\iint_{D} f(x, y) \mathrm{d} x \mathrm{~d}
+y=\int_{a}^{b}\left(\int_{\varphi_{1}(x)}^{\varphi_{2}(x)} f(x, y)
+\mathrm{d} y\right) \mathrm{d} x=\int_{a}^{b} \mathrm{~d} x
+\int_{\varphi_{1}(x)}^{\varphi_{2}(x)} f(x, y) \mathrm{d} y .
+\]</span> <strong>此公式表明二重积分可化为先对 <span
+class="math inline">\(y\)</span>, 后对 <span
+class="math inline">\(x\)</span> 的两次定积分.</strong> 上式右端称为先对
+<span class="math inline">\(y\)</span>, 后对 <span
+class="math inline">\(x\)</span> 的累次 积分 (二次积分).</p>
+<h5
+id="积分区间形如dleftx-y-mid-psi_1y-leqslant-x-leqslant-psi_2y-c-leqslant-y-leqslant-dright">积分区间形如<span
+class="math inline">\(D=\left\{(x, y) \mid \psi_{1}(y) \leqslant x
+\leqslant \psi_{2}(y), c \leqslant y \leqslant d\right\}\)</span></h5>
+<p>二重积分的另一计算公式 <span class="math display">\[
+\iint_{D} f(x, y) \mathrm{d} x \mathrm{~d}
+y=\int_{c}^{d}\left(\int_{\psi_{1}(y)}^{\psi_{2}(y)} f(x, y) \mathrm{d}
+x\right) \mathrm{d} y=\int_{c}^{d} \mathrm{~d} y
+\int_{\psi_{1}(y)}^{\psi_{2}(y)} f(x, y) \mathrm{d} x .
+\]</span> <strong>此公式表明二重积分可化为先对 <span
+class="math inline">\(x\)</span>, 后对 <span
+class="math inline">\(y\)</span> 的累次积分.</strong></p>
+<ul>
+<li>最后指出, 虽然在推导上述两个公式时, 我们假设被积函数 <span
+class="math inline">\(f(x, y)\)</span> 非负, 但对于一般的 <span
+class="math inline">\(f(x, y)\)</span>, 公式 (6.2.1)、(6.2.2) 仍成立.
+另外, 对于不满足公式条件的积分区域 <span
+class="math inline">\(D\)</span>, 我们可将 <span
+class="math inline">\(D\)</span> 分割为若干子闭区域,
+使得在每个子闭区域上满足公式的条件, 将二重积分化为累次积分,
+然后应用二重积分对积分区域的可加性, 把它们相加即可.</li>
+</ul>
+<h4 id="换元积分法">6.2.2 换元积分法</h4>
+<ul>
+<li>定理 (二重积分的换元积分公式) 设 <span
+class="math inline">\(D\)</span> 为平面有界闭区域, 函数 <span
+class="math inline">\(f(x, y)\)</span> 在 <span
+class="math inline">\(D\)</span> 上 连续, 函数组 <span
+class="math inline">\(x=x(u, v), y=y(u, v)\)</span> 在 <span
+class="math inline">\(u v\)</span> 平面的有界闭区域 <span
+class="math inline">\(D^{\prime}\)</span> 上连续可微, 使得 <span
+class="math inline">\(D^{\prime}\)</span> 与 <span
+class="math inline">\(D\)</span>的点一一对应, 并且雅可比行列式</li>
+</ul>
+<p><span class="math display">\[
+J(u, v)=\frac{D(x, y)}{D(u, v)} \neq 0, \quad(u, v) \in D^{\prime},
+\]</span></p>
+<blockquote>
+<blockquote>
+<p><span class="math inline">\(Pf.M_{1}, M_{2}, M_{3}, M_{4}\)</span>
+的坐标分别为</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;M_{1}\left(x\left(u_{i}, v_{i}\right), y\left(u_{i},
+v_{i}\right)\right) \\
+&amp;M_{2}\left(x\left(u_{i}+\Delta u_{i}, v_{i}\right),
+y\left(u_{i}+\Delta u_{i}, v_{i}\right)\right) \\
+&amp;M_{3}\left(x\left(u_{i}+\Delta u_{i}, v_{i}+\Delta v_{i}\right),
+y\left(u_{i}+\Delta u_{i}, v_{i}+\Delta v_{i}\right)\right) \\
+&amp;M_{4}\left(x\left(u_{i}, v_{i}+\Delta v_{i}\right), y\left(u_{i},
+v_{i}+\Delta v_{i}\right)\right)
+\end{aligned}
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>​ 由于 <span class="math inline">\(x(u, v), y(u, v)\)</span>
+连续可微, 当 <span class="math inline">\(\Delta u_{i}, \Delta
+v_{i}\)</span> 很小时, 若不计高阶无穷小, 则有</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+\begin{aligned}
+\overrightarrow{M_{1} M_{2}} &amp;=\left(x\left(u_{i}+\Delta u_{i},
+v_{i}\right)-x\left(u_{i}, v_{i}\right), y\left(u_{i}+\Delta u_{i},
+v_{i}\right)-y\left(u_{i}, v_{i}\right)\right) \\
+&amp;=\left(x_{u}^{\prime}\left(u_{i}+\theta_{1} \Delta u_{i},
+v_{i}\right), y_{u}^{\prime}\left(u_{i}+\theta_{2} \Delta u_{i},
+v_{i}\right)\right) \Delta u_{i} \\
+&amp; \approx\left(x_{u}^{\prime}\left(u_{i}, v_{i}\right),
+y_{u}^{\prime}\left(u_{i}, v_{i}\right)\right) \Delta u_{i}
+\quad\left(0&lt;\theta_{1}, \theta_{2}&lt;1\right),
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\overrightarrow{M_{4} M_{3}} &amp;=\left(x\left(u_{i}+\Delta u_{i},
+v_{i}+\Delta v_{i}\right)-x\left(u_{i}, v_{i}+\Delta v_{i}\right),
+y\left(u_{i}+\Delta u_{i}, v_{i}+\Delta v_{i}\right)-y\left(u_{i},
+v_{i}+\Delta v_{i}\right)\right) \\
+&amp;=\left(x_{u}^{\prime}\left(u_{i}+\theta_{3} \Delta u_{i},
+v_{i}+\Delta v_{i}\right), y_{u}^{\prime}\left(u_{i}+\theta_{4} \Delta
+u_{i}, v_{i}+\Delta v_{i}\right)\right) \Delta u_{i} \\
+&amp; \approx\left(x_{u}^{\prime}\left(u_{i}, v_{i}\right),
+y_{u}^{\prime}\left(u_{i}, v_{i}\right)\right) \Delta u_{i}
+\quad\left(0&lt;\theta_{3}, \theta_{4}&lt;1\right)
+\end{aligned}
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>所以 (为了方便利用向量的运算, 我们把 2 维坐标 <span
+class="math inline">\((x, y)\)</span> 写成 3 维坐标 <span
+class="math inline">\((x, y, 0)\)</span> )</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+\overrightarrow{M_{1} M_{2}} \approx \overrightarrow{M_{4} M_{3}}
+\approx\left(x_{u}^{\prime}\left(u_{i}, v_{i}\right),
+y_{u}^{\prime}\left(u_{i}, v_{i}\right), 0\right) \Delta u_{i}
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>同理可得</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+\overrightarrow{M_{1} M_{4}} \approx \overrightarrow{M_{2} M_{3}}
+\approx\left(x_{v}^{\prime}\left(u_{i}, v_{i}\right),
+y_{v}^{\prime}\left(u_{i}, v_{i}\right), 0\right) \Delta v_{i},
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>因而曲边四边形 <span class="math inline">\(M_{1} M_{2} M_{3}
+M_{4}\)</span> 可近似地看作平行四边形, 它的面积为</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+\Delta \sigma \approx\left|\overrightarrow{M_{1} M_{2}} \times
+\overrightarrow{M_{1} M_{4}}\right|=\left|\frac{D(x, y)}{D(u,
+v)}\right|_{\left(u_{i}, v_{i}\right)} \Delta u_{i} \Delta
+v_{i}=\left|J\left(u_{i}, v_{i}\right)\right| \Delta u_{i} \Delta v_{i},
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>所以 <span class="math inline">\(\Delta \sigma\)</span> 与 <span
+class="math inline">\(\Delta \sigma^{\prime}\)</span> 之比为 <span
+class="math inline">\(\left|J\left(u_{i}, v_{i}\right)\right|\)</span>.
+由于 <span class="math inline">\(J(u, v)\)</span> 在 <span
+class="math inline">\(D^{\prime}\)</span> 上连续且不等于 0 , 所以 <span
+class="math inline">\(\lambda \rightarrow 0 \Longleftrightarrow\)</span>
+<span class="math inline">\(\lambda^{\prime} \rightarrow 0\)</span>.
+由二重积分的定义得</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+\begin{aligned}
+\iint_{D} f(x, y) \mathrm{d} \sigma &amp;=\lim _{\lambda \rightarrow 0}
+\sum_{i=1}^{n} f\left(x_{i}, y_{i}\right) \Delta \sigma_{i} \\
+&amp;=\lim _{\lambda^{\prime} \rightarrow 0} \sum_{i=1}^{n}
+f\left(x\left(u_{i}, v_{i}\right), y\left(u_{i},
+v_{i}\right)\right)\left|J\left(u_{i}, v_{i}\right)\right| \Delta u_{i}
+\Delta v_{i} \\
+&amp;=\iint_{D^{\prime}} f(x(u, v), y(u, v))|J(u, v)| \mathrm{d} u
+\mathrm{~d} v
+\end{aligned}
+\]</span></p>
+<p>​ 则有换元积分公式: <span class="math display">\[
+\iint_{D} f(x, y) \mathrm{d} \sigma=\iint_{D^{\prime}} f(x(u, v), y(u,
+v))|J(u, v)| \mathrm{d} u \mathrm{~d} v
+\]</span></p>
+<ul>
+<li>其中 <span class="math inline">\(\mathrm{d} \sigma=|J(u, v)|
+\mathrm{d} u \mathrm{~d} v\)</span> 是曲线坐标下的面积微元.</li>
+</ul>
+<h5 id="极坐标变换">极坐标变换</h5>
+<blockquote>
+<blockquote>
+<p>在二重积分中, 极坐标换元是最常用的换元变换. 我们知道,
+直角坐标与极坐标的换元 变换有公式</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+x=\rho \cos \theta, \quad y=\rho \sin \theta
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>此时</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+J(\rho, \theta)=\frac{D(x, y)}{D(\rho, \theta)}=\left|\begin{array}{cc}
+  \cos \theta &amp; -\rho \sin \theta \\
+  \sin \theta &amp; \rho \cos \theta
+  \end{array}\right|=\rho
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>据定理 6.2.3 可得:</p>
+</blockquote>
+</blockquote>
+<p><span class="math display">\[
+  \iint_{D} f(x, y) \mathrm{d} \sigma=\iint_{D^{\prime}} f(\rho \cos
+\theta, \rho \sin \theta) \rho \mathrm{d} \rho \mathrm{d} \theta
+\]</span></p>
+<blockquote>
+<blockquote>
+<p>其中 <span class="math inline">\(D^{\prime}\)</span>
+是在极坐标变换下原积分区域 <span class="math inline">\(D\)</span>
+所对应的区域, <span class="math inline">\(\mathrm{d} \sigma=\rho
+\mathrm{d} \rho \mathrm{d} \theta\)</span> 是极坐标下的面积 微元.</p>
+</blockquote>
+</blockquote>
+<h3 id="三重积分">6.3 三重积分</h3>
+<h4 id="累次积分法-1">6.3.2 累次积分法</h4>
+<h5 id="先一后二">先一后二</h5>
+<p><span class="math display">\[
+对于积分区域为\Omega = \{(x,y,z)|z_1(x,y)\leq z(x,y) \leq z_2(x,y),
+(x,y)\in D\}\\
+\iiint f(x,y,z)dxdydz = \iint d\sigma \int_{z_1(x,y)}^{z_2(x,y)}
+f(x,y,z)dz\\
+进一步，对于二重积分，可以运用之前的知识，根据情况改写为\\
+= \int_a^b dx\int _{y_1(x)}^{y_2{(x)}}dy \int_{z_1(x,y)}^{z_2(x,y)}
+f(x,y,z)dz\\
+\]</span></p>
+<h5 id="先二后一">先二后一</h5>
+<p><span class="math display">\[
+我们可以用一个垂直于z轴的平面截积分区域，得到足够多的“薄片”\\
+每一层可以二重积分，积分区域为D(z)\\
+\iiint f(x,y,z)dxdydz = \int_a^b dz \iint f(x,y,z)d\sigma\\
+\]</span></p>
+<h5 id="经验与技巧">经验与技巧</h5>
+<ul>
+<li>同一道题，不同的积分顺序对计算过程的影响很大。优先对无关的变量进行积分</li>
+<li>还原积分要画图确定积分区域</li>
+<li>还原积分的目的：
+<ul>
+<li>简化被积函数</li>
+<li>简化积分区域</li>
+<li>更多时候，是一种二者的权衡（Trade off）</li>
+</ul></li>
+</ul>
+<h4 id="换元积分法-1">6.3.3 换元积分法</h4>
+<p><span class="math inline">\(Thm.\)</span> (三重积分的换元积分公式) 设
+<span class="math inline">\(\Omega \subset \mathbb{R}^{3}\)</span>
+为有界闭区域, 函数 <span class="math inline">\(f(x, y, z)\)</span> 在
+<span class="math inline">\(\Omega\)</span> 上连续, 函数组 <span
+class="math inline">\(x=x(u, v, w), y=y(u, v, w), z=z(u, v, w)\)</span>
+在有界闭区域 <span class="math inline">\(\Omega^{\prime}\)</span>
+上连续可微, 使得 <span class="math inline">\(\Omega\)</span> 与 <span
+class="math inline">\(\Omega^{\prime}\)</span> 的点一一对应,
+并且雅可比行列式 <span class="math display">\[
+J(u, v, w)=\frac{D(x, y, z)}{D(u, v, w)}=\left|\begin{array}{lll}
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} &amp;
+\frac{\partial x}{\partial w} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} &amp;
+\frac{\partial y}{\partial w} \\
+\frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v} &amp;
+\frac{\partial z}{\partial w}
+\end{array}\right| \neq 0, \quad(u, v, w) \in \Omega^{\prime}
+\]</span> 则有三重积分换元积分公式: <span class="math display">\[
+\iint_{\Omega} \int_{\Omega} f(x, y, z) \mathrm{d}
+V=\iint_{\Omega^{\prime}} \int_{J} f(x(u, v, w), y(u, v, w), z(u, v,
+w))|J(u, v, w)| \mathrm{d} u \mathrm{~d} v \mathrm{~d} w .
+\]</span> 其中 <span class="math inline">\(\mathrm{d} V=|J(u, v, w)|
+\mathrm{d} u \mathrm{~d} v \mathrm{~d} w\)</span>
+是曲线坐标下的体积微元.</p>
+<h5 id="柱坐标变换">柱坐标变换</h5>
+<p>采用柱坐标计算三重积分时, 雅可比行列式 <span class="math display">\[
+J(\rho, \theta, z)=\frac{D(x, y, z)}{D(\rho, \theta,
+z)}=\left|\begin{array}{ccc}
+\cos \theta &amp; -\rho \sin \theta &amp; 0 \\
+\sin \theta &amp; \rho \cos \theta &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}\right|=\rho,
+\]</span> 据定理 6.3.1 可得 <span class="math display">\[
+\iiint_{\Omega} f(x, y, z) \mathrm{d} x \mathrm{~d} y \mathrm{~d}
+z=\iiint_{\Omega^{\prime}} f(\rho \cos \theta, \rho \sin \theta, z) \rho
+\mathrm{d} \rho \mathrm{d} \theta \mathrm{d} z,
+\]</span> 其中 <span class="math inline">\(\mathrm{d} V=\rho \mathrm{d}
+\rho \mathrm{d} \theta \mathrm{d} z\)</span> 是柱坐标下的体积微元.</p>
+<h5 id="球坐标变换">球坐标变换</h5>
+<p>点 <span class="math inline">\(M\)</span> 的直角坐标 <span
+class="math inline">\((x, y, z)\)</span> 与其球坐标 <span
+class="math inline">\((r, \varphi, \theta)\)</span> 之间有关系式 <span
+class="math display">\[
+x=r \sin \varphi \cos \theta, \quad y=r \sin \varphi \sin \theta, \quad
+z=r \cos \varphi,
+\]</span> 此式称为球坐标变换.</p>
+<p>-采用球坐标计算三重积分时, 雅可比行列式 <span class="math display">\[
+J(r, \varphi, \theta)=\frac{D(x, y, z)}{D(r, \varphi,
+\theta)}=\left|\begin{array}{ccc}
+\sin \varphi \cos \theta &amp; r \cos \varphi \cos \theta &amp; -r \sin
+\varphi \sin \theta \\
+\sin \varphi \sin \theta &amp; r \cos \varphi \sin \theta &amp; r \sin
+\varphi \cos \theta \\
+\cos \varphi &amp; -r \sin \varphi &amp; 0
+\end{array}\right|=r^{2} \sin \varphi,
+\]</span> 据定理 6.3.1 可得 <span class="math display">\[
+\iiint_{\Omega} f(x, y, z) \mathrm{d} x \mathrm{~d} y \mathrm{~d}
+z=\iint_{\Omega^{\prime}} f(r \sin \varphi \cos \theta, r \sin \varphi
+\sin \theta, r \cos \varphi) r^{2} \sin \varphi \mathrm{d} r \mathrm{~d}
+\varphi \mathrm{d} \theta,
+\]</span> 其中 <span class="math inline">\(\mathrm{d} V=r^{2} \sin
+\varphi \mathrm{d} r \mathrm{~d} \varphi \mathrm{d} \theta\)</span>
+是球坐标下的体积微元. 一般情况下, 如果积分区域中含有球面、雉面或过 <span
+class="math inline">\(z\)</span> 轴的半平面, 采用球坐标会比较简 单.
+将三重积分化为球坐标下的三重积分后, 还要将它化为球坐标下的累次积分,
+这时, 一般 情况下最先对 <span class="math inline">\(r\)</span> 积分,
+然后对 <span class="math inline">\(\varphi\)</span> 积分, 最后对 <span
+class="math inline">\(\theta\)</span> 积分.</p>
+<h5 id="广义球坐标变换">广义球坐标变换</h5>
+<p>例 6.3.9 计算三重积分 <span class="math inline">\(\iiint_{\Omega}
+x^{2} \mathrm{~d} x \mathrm{~d} y \mathrm{~d} z\)</span>, 其中 <span
+class="math inline">\(\Omega\)</span> 是椭球体 <span
+class="math inline">\(\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}
+\leqslant 1\)</span>. 解 采用广义球坐标变换, 令 <span
+class="math display">\[
+x=a r \sin \varphi \cos \theta, \quad y=b r \sin \varphi \sin \theta,
+\quad z=c r \cos \varphi,
+\]</span> 雅可比行列式 <span class="math display">\[
+J(r, \varphi, \theta)=\left|\begin{array}{ccc}
+a \sin \varphi \cos \theta &amp; a r \cos \varphi \cos \theta &amp; -a r
+\sin \varphi \sin \theta \\
+b \sin \varphi \sin \theta &amp; b r \cos \varphi \sin \theta &amp; b r
+\sin \varphi \cos \theta \\
+c \cos \varphi &amp; -c r \sin \varphi &amp; 0
+\end{array}\right|=a b c r^{2} \sin \varphi
+\]</span> 在球坐标下将 <span class="math inline">\(\Omega\)</span> 变为
+<span class="math inline">\(\Omega^{\prime}\)</span>, 其中 <span
+class="math display">\[
+\Omega^{\prime}: \quad 0 \leqslant r \leqslant 1, \quad 0 \leqslant
+\varphi \leqslant \pi, \quad 0 \leqslant \theta \leqslant 2 \pi,
+\]</span></p>
+<h3 id="重积分的应用">6.4 重积分的应用</h3>
+<h4 id="重积分在几何上的应用">6.4.1 重积分在几何上的应用</h4>
+<h5 id="立体的体积">立体的体积</h5>
+<h3 id="广义重积分">广义重积分</h3>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yunzinan.github.io">oys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yunzinan.github.io/post/26ca39d5.html">https://yunzinan.github.io/post/26ca39d5.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yunzinan.github.io" target="_blank">Yunzinan</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></div><div class="post_share"><div class="social-share" data-image="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/51cd0943.html"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Calculus-II-notes-chapt3</div></div></a></div><div class="next-post pull-right"><a href="/post/465af6d8.html"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Calculus_II_notes_chapt1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/6ad1be83.html" title="微积分II期末复习"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">微积分II期末复习</div></div></a></div><div><a href="/post/f14df9e6.html" title="Calculus_II_midterm_review"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-10</div><div class="title">Calculus_II_midterm_review</div></div></a></div><div><a href="/post/465af6d8.html" title="Calculus_II_notes_chapt1"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus_II_notes_chapt1</div></div></a></div><div><a href="/post/51cd0943.html" title="Calculus-II-notes-chapt3"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus-II-notes-chapt3</div></div></a></div><div><a href="/post/b8aeac76.html" title="Calculus-II-notes-chapt5"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus-II-notes-chapt5</div></div></a></div><div><a href="/post/21a7fdcc.html" title="Calculus-II-notes-chapt6"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus-II-notes-chapt6</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">oys</div><div class="author-info__description">菜狗一枚</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yunzinan"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%A7%AF%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">6 重积分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text">6.1 二重积分的概念和性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">二重积分的概念与性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E5%8F%AF%E7%A7%AF%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">二重积分的可积条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.</span> <span class="toc-text">6.2 二重积分的计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%AF%E6%AC%A1%E7%A7%AF%E5%88%86%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">6.2.1 累次积分法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E5%8C%BA%E5%9F%9F%E5%BD%A2%E5%A6%82dxyvarphi_1xle-yle-varphi_2xale-xle-b"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">积分区域形如\(D&#x3D;\{(x,y)|\varphi_1(x)\le y\le \varphi_2(x),a\le
+x\le b\}\)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E5%8C%BA%E9%97%B4%E5%BD%A2%E5%A6%82dleftx-y-mid-psi_1y-leqslant-x-leqslant-psi_2y-c-leqslant-y-leqslant-dright"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">积分区间形如\(D&#x3D;\left\{(x, y) \mid \psi_{1}(y) \leqslant x
+\leqslant \psi_{2}(y), c \leqslant y \leqslant d\right\}\)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8D%A2%E5%85%83%E7%A7%AF%E5%88%86%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">6.2.2 换元积分法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%81%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">极坐标变换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E9%87%8D%E7%A7%AF%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text">6.3 三重积分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%AF%E6%AC%A1%E7%A7%AF%E5%88%86%E6%B3%95-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">6.3.2 累次积分法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%88%E4%B8%80%E5%90%8E%E4%BA%8C"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">先一后二</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%88%E4%BA%8C%E5%90%8E%E4%B8%80"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">先二后一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E4%B8%8E%E6%8A%80%E5%B7%A7"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">经验与技巧</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8D%A2%E5%85%83%E7%A7%AF%E5%88%86%E6%B3%95-1"><span class="toc-number">1.3.2.</span> <span class="toc-text">6.3.3 换元积分法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%B1%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">柱坐标变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%83%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">球坐标变换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%90%83%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">广义球坐标变换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">6.4 重积分的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E7%A7%AF%E5%88%86%E5%9C%A8%E5%87%A0%E4%BD%95%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">6.4.1 重积分在几何上的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AB%8B%E4%BD%93%E7%9A%84%E4%BD%93%E7%A7%AF"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">立体的体积</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E9%87%8D%E7%A7%AF%E5%88%86"><span class="toc-number">1.5.</span> <span class="toc-text">广义重积分</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/f1d501c7.html" title="一个小问题: 可积一定有原函数吗?">一个小问题: 可积一定有原函数吗?</a><time datetime="2022-07-10T07:53:36.000Z" title="发表于 2022-07-10 15:53:36">2022-07-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/c3bfd1c6.html" title="Jupyter notebook快速入门">Jupyter notebook快速入门</a><time datetime="2022-06-28T16:39:30.000Z" title="发表于 2022-06-29 00:39:30">2022-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/9c59c100.html" title="普通物理I复习笔记">普通物理I复习笔记</a><time datetime="2022-06-22T01:28:58.000Z" title="发表于 2022-06-22 09:28:58">2022-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/39a8bbff.html" title="马原复习提纲">马原复习提纲</a><time datetime="2022-06-14T13:59:26.000Z" title="发表于 2022-06-14 21:59:26">2022-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/7a38bc51.html" title="离散数学课堂笔记">离散数学课堂笔记</a><time datetime="2022-06-13T14:43:08.000Z" title="发表于 2022-06-13 22:43:08">2022-06-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By oys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">心情不好的时候,试试切换夜间模式,用鼠标给自己放几束烟花吧</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script src="/js/sun_moon.js" async></script><div class="aplayer no-destroy" data-id="2729240519" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

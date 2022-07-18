@@ -1,0 +1,683 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>微积分II期末复习 | Yunzinan</title><meta name="keywords" content="微积分"><meta name="author" content="oys"><meta name="copyright" content="oys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="期末复习 题型整理 空间解析几何  求空间曲线 \(\left\{\begin{array}{l}x^{2}+y^{2}+z^{2}&#x3D;14, \\ 3 x+2 y+z&#x3D;10\end{array}\right.\) 在点 \(P(1,2,3)\) 处的法平面与切线方程.   曲线Green公式 Gauss公式 Stokes公式  求柱面 \(x^{2}+y^{2}&#x3D;a y(a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分II期末复习">
+<meta property="og:url" content="https://yunzinan.github.io/post/6ad1be83.html">
+<meta property="og:site_name" content="Yunzinan">
+<meta property="og:description" content="期末复习 题型整理 空间解析几何  求空间曲线 \(\left\{\begin{array}{l}x^{2}+y^{2}+z^{2}&#x3D;14, \\ 3 x+2 y+z&#x3D;10\end{array}\right.\) 在点 \(P(1,2,3)\) 处的法平面与切线方程.   曲线Green公式 Gauss公式 Stokes公式  求柱面 \(x^{2}+y^{2}&#x3D;a y(a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg">
+<meta property="article:published_time" content="2022-06-11T08:52:35.000Z">
+<meta property="article:modified_time" content="2022-06-11T09:03:57.021Z">
+<meta property="article:author" content="oys">
+<meta property="article:tag" content="微积分">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yunzinan.github.io/post/6ad1be83"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '微积分II期末复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-11 17:03:57'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Yunzinan</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">微积分II期末复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-11T08:52:35.000Z" title="发表于 2022-06-11 16:52:35">2022-06-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-11T09:03:57.021Z" title="更新于 2022-06-11 17:03:57">2022-06-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Maths/">Maths</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="微积分II期末复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="期末复习">期末复习</h1>
+<h2 id="题型整理">题型整理</h2>
+<h3 id="空间解析几何">空间解析几何</h3>
+<ol type="1">
+<li>求空间曲线 <span
+class="math inline">\(\left\{\begin{array}{l}x^{2}+y^{2}+z^{2}=14, \\ 3
+x+2 y+z=10\end{array}\right.\)</span> 在点 <span
+class="math inline">\(P(1,2,3)\)</span> 处的法平面与切线方程.</li>
+<li></li>
+</ol>
+<h3 id="曲线green公式-gauss公式-stokes公式">曲线Green公式 Gauss公式
+Stokes公式</h3>
+<ol type="1">
+<li><p>求柱面 <span class="math inline">\(x^{2}+y^{2}=a
+y(a&gt;0)\)</span> 位于球面 <span
+class="math inline">\(x^{2}+y^{2}+z^{2}=a^{2}\)</span>
+内部分曲面的面积.</p></li>
+<li><p>计算第二类曲线积分 <span class="math inline">\(I_{1}=\int_{C}
+\cos \left(x+y^{2}\right) \mathrm{d} x+\left(2 y \cos
+\left(x+y^{2}\right)-\sqrt{1+y^{4}}\right) \mathrm{d} y\)</span>, 其中
+<span class="math inline">\(C\)</span> 为旋轮 线 <span
+class="math inline">\(x=a(t-\sin t), y=a(1-\cos t)\)</span>, 由 <span
+class="math inline">\(O(0,0)\)</span> 到 <span class="math inline">\(A(2
+\pi a, 0)\)</span>, 其中 <span
+class="math inline">\(a&gt;0\)</span>.</p></li>
+<li><p>计算第一类曲面积分 <span class="math inline">\(I_{2}=\iint_{S}(x
+y+y z+z x) \mathrm{d} S\)</span>, 其中 <span
+class="math inline">\(S\)</span> 为圆雉面 <span
+class="math inline">\(z=\sqrt{x^{2}+y^{2}}\)</span> 被柱面 <span
+class="math inline">\(x^{2}+y^{2}=\)</span> <span
+class="math inline">\(2 a x(a&gt;0)\)</span> 所截下的部分.</p>
+<blockquote>
+<p>投影法+利用对称性化简 <span class="math display">\[
+I_{2}=\iint_{S}(x y+y z+z x) \mathrm{d} S  =\iint zx dS\\
+= \iint x\sqrt{x^2+y^2}|(z_1&#39;, z_2&#39; ,-1)|dxdy =  \sqrt2\iint
+x\sqrt{x^2+y^2}dxdy\\
+= 2\sqrt{2} \iint \rho^3\cos \varphi d\rho d\varphi = \cdots.
+\]</span></p>
+</blockquote></li>
+<li><p>计算 <span class="math inline">\(I_{3}=\int_{C} y^{2} \mathrm{~d}
+x+z^{2} \mathrm{~d} y+x^{2} \mathrm{~d} z\)</span>, 其中 <span
+class="math inline">\(C\)</span> 是平面 <span
+class="math inline">\(x+y+z=1\)</span> 的第一卦限部分与三
+个坐标面的交线, 从 <span class="math inline">\(z\)</span> 周正向往 <span
+class="math inline">\(z\)</span> 轴负向看去是逆时针方向.</p>
+<blockquote>
+<p><strong>法一</strong> <span class="math display">\[
+I_3 = \oint_c(y^2, z^2, x^2)\cdot d\vec{r}\\
+=  \iint rot(y^2, z^2, x^2)\times \vec{n}dS\\
+= \iint (-2z, -2x, -2y)\cdot {(1,1,1)\over \sqrt{3}}dS\\
+= -{2\over \sqrt{3}}\iint (x+y+z)dS\\
+= -{2\over \sqrt{3}}\iint 1dS = -{2\over \sqrt{3}}S_\Delta =
+-1.\square\\
+\]</span> <strong>注</strong> 这里最后如果没有发现<span
+class="math inline">\(x+y+z=1\)</span>为积分区域的方程来化简的话,
+直接嗯算也是可以的(笔者第一次就没发现) <span class="math display">\[
+\iint_s (x+ y + z)dS = -{2\over \sqrt{3}}\iint (x+ y +
+(1-x-y))\sqrt{3}dxdy = -1.
+\]</span> <strong>法二</strong> (直接曲线积分)</p>
+<ol type="1">
+<li><p>由轮换对称性, <span class="math inline">\(I_3 = 3\int (0,0,
+x^2)\cdot d\vec{r}\)</span></p></li>
+<li><p>分段, 发现其中一段的切向量与函数方向垂直, 点积为0,
+另有一段函数向量为零, 点积为0,因此只要积其中一段.</p></li>
+<li><p><span class="math display">\[
+I_3 = 3\int_{C_3} (0, 0, x^2)\cdot (1, 0, -1)dx = -3\int_0^1 x^2dx = -1.
+\]</span></p></li>
+</ol>
+</blockquote></li>
+<li><p>计算 <span class="math inline">\(I_{2}=\displaystyle \oint_{C}
+\frac{y^{2}}{2} \mathrm{~d} x-x z \mathrm{~d} y+\frac{y^{2}}{2}
+\mathrm{~d} z\)</span>, 其中 <span class="math inline">\(C\)</span> 是
+<span class="math inline">\(x^{2}+y^{2}+z^{2}=R^{2}\)</span> 与 <span
+class="math inline">\(x+y=R\)</span> 的交线, 从 <span
+class="math inline">\(y\)</span> 轴正向看去是顺时针方向.</p></li>
+<li><p>计算第二类曲面积分 <span class="math inline">\(\displaystyle
+I_{3}=\iint_{\Sigma} x \mathrm{~d} y \mathrm{~d} z+(z+1)^{2} \mathrm{~d}
+x \mathrm{~d} y\)</span>, 其中 <span
+class="math inline">\(\Sigma\)</span> 是下半球面 <span
+class="math inline">\(z=-\sqrt{1-x^{2}-y^{2}}\)</span>, 取下侧.</p></li>
+</ol>
+<h3 id="无穷级数">无穷级数</h3>
+<h4 id="判断数项级数绝对收敛条件收敛">判断数项级数绝对收敛/条件收敛</h4>
+<blockquote>
+<p>可以先判断是否绝对收敛,再判断是否条件收敛.</p>
+</blockquote>
+<ol type="1">
+<li><p>讨论数项级数 <span class="math inline">\(\sum_{n=1}^{\infty}
+\frac{n^{n-1}}{\left(2 n^{2}+n+1\right)^{\frac{n+1}{2}}}\)</span>
+的敛散性.</p>
+<blockquote>
+<p><strong>法一</strong> 放缩即可.</p>
+<p><strong>法二</strong> 根植判别法 <span
+class="math inline">\(\lim_{n\to \infin} \sqrt[n]{\frac{n^{n-1}}{\left(2
+n^{2}+n+1\right)^{\frac{n+1}{2}}}} = {1\over 2} &lt; 1\)</span></p>
+<p>注意配凑出比较好的形式<span class="math inline">\(x^n\)</span>类.</p>
+</blockquote></li>
+<li><p><span class="math display">\[
+\text { 考察级数 } \sum_{n=1}^{\infty}\left(\frac{1}{n}-\arctan
+\frac{1}{n}\right) \text { 的敛散性. }
+\]</span></p>
+<blockquote>
+<p>先处理<span class="math inline">\(\arctan {1\over n}\)</span>.</p>
+</blockquote></li>
+</ol>
+<h4 id="判断广义积分敛散性">判断广义积分敛散性</h4>
+<blockquote>
+<h4 id="做题步骤">做题步骤</h4>
+<ol type="1">
+<li>判断广义积分的奇点(若有多个,需要分段)</li>
+<li>对每个部分判断敛散性,方法:
+<ol type="1">
+<li>比较判别法</li>
+<li>放缩</li>
+<li>拆分</li>
+<li>Abel审敛法(有界+积分收敛)</li>
+<li>Dirichlet审敛法(单调趋于零+积分有界)</li>
+<li>非负项有上界</li>
+</ol></li>
+</ol>
+</blockquote>
+<ol type="1">
+<li><p>讨论广义积分 <span class="math inline">\(\int_{0}^{+\infty}
+x^{p-1} \mathrm{e}^{-x} \mathrm{~d} x\)</span> 的敛散性.</p>
+<blockquote>
+<p>==注意==:</p>
+<ul>
+<li>对可能出现奇点的情况进行讨论.(不要<strong>漏</strong>可能的奇点!!)</li>
+<li><span class="math inline">\(e^x(x\to \infin)\)</span>趋近<span
+class="math inline">\(+\infin\)</span>的速度快于任何幂级数.因此<span
+class="math inline">\(\forall k \in \R,\displaystyle lim_{x\to
++\infin}{x^k\over e^x} = 0\)</span></li>
+<li>但是在说明<span class="math inline">\(\int {x^{p-1}\over
+e^x}\)</span>收敛时,比较好的说法是<span
+class="math inline">\({x^{p-1}\over e^x} \le {x^{p-1}\over
+x^{p+1}}\)</span>.</li>
+</ul>
+</blockquote></li>
+<li><p>讨论数项级数 <span class="math inline">\(\sum_{n=2}^{\infty}
+\frac{\sin \left(\frac{n \pi}{6}\right)}{\sqrt{n}}\)</span> 的敛散性.
+如果收敛，是绝对收敛还是条件收敛?</p>
+<blockquote>
+<p>同<strong>例</strong> 8.3.3</p>
+</blockquote></li>
+<li><p>求数项级数 <span class="math inline">\(\sum_{n=1}^{\infty}
+\frac{(-1)^{n-1}}{n}\left(1-\frac{1}{3^{n}}\right)\)</span> 的和.</p>
+<blockquote>
+<p><strong>解</strong> 考虑函数项级数<span class="math inline">\(\sum
+{(-1)^n\over n}x^n = S(x)\)</span>,</p>
+<p>显然收敛域为<span class="math inline">\((-1,1]\)</span>.</p>
+<p>$S(x) = S(x) - S(0) = <em>0^x S'(x) = </em>{n=0}<sup>(-x)</sup>n =
+_0^x{1+ x}= (x+1). $</p>
+<p><span class="math inline">\(\therefore 原级数 = S(1) - S({1\over 3})
+= \ln 2 - \ln {4\over 3} = \ln {3\over 2},x\in
+(-1,1].\square\)</span></p>
+</blockquote></li>
+<li><p><span class="math display">\[
+\text { 判别级数 } \sum_{n=1}^{\infty}
+\frac{1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}}{(n+1)(n+2)} \text {
+的敛散性; 若收敛, 求其和. }
+\]</span></p>
+<blockquote>
+<p><strong>注</strong> 这里有一个对<span
+class="math inline">\(\sum_{i=1}^\infin {1\over k}\)</span>的估计.</p>
+<blockquote>
+<p>解: <span class="math inline">\(x&gt;0\)</span> 时, <span
+class="math inline">\(\frac{x}{1+x}&lt;\ln (1+x)\)</span>, 令 <span
+class="math inline">\(x=\frac{1}{k}\)</span>, 则 <span
+class="math inline">\(\frac{1}{k+1}&lt;\ln
+\left(1+\frac{1}{k}\right)\)</span>, 取 <span
+class="math inline">\(k=1,2, \cdots, n-1\)</span>, 再将各式相加可得
+<span
+class="math inline">\(a_{n}=1+\frac{1}{2}+\cdots+\frac{1}{n}&lt;\ln
+n+1&lt;2 \ln n(n \geq 3)\)</span>, 所以 <span
+class="math inline">\(\frac{a_{n}}{(n+1)(n+2)}&lt;\frac{2 \ln
+r}{n^{2}}\)</span> 而 <span class="math inline">\(\lim _{n \rightarrow
+\infty} \frac{2 \ln n}{n^{2}} \cdot n^{\frac{3}{2}}=0\)</span>, 所以级数
+<span class="math inline">\(\sum_{n=1}^{\infty} \frac{2 \ln
+n}{n^{2}}\)</span> 收玫. 由比较判别法, 级数 <span
+class="math inline">\(\sum_{n=1}^{\infty}
+\frac{a_{n}}{(n+1)(n+2)}\)</span> 收敛. <span class="math display">\[
+\begin{aligned}
+S_{n}=&amp; \sum_{k=1}^{n} \frac{a_{k}}{(k+1)(k+2)}=\sum_{k=1}^{n}
+a_{k}\left(\frac{1}{k+1}-\frac{1}{k+2}\right)=\frac{a_{1}}{2}+\frac{a_{2}-a_{1}}{3}+\cdots+\frac{a_{n}-a_{n-1}}{n+1}-\frac{a_{n}}{n+2}
+\\
+&amp;=1-\frac{1}{n+1}-\frac{a_{n}}{n+2}, \text { 所以 }
+\sum_{n=1}^{\infty} \frac{a_{n}}{(n+1)(n+2)}=\lim _{n \rightarrow
+\infty} S_{n}=1 .
+\end{aligned}
+\]</span></p>
+</blockquote>
+</blockquote></li>
+</ol>
+<h4 id="根据级数求和函数">根据级数求和函数</h4>
+<blockquote>
+<ol type="1">
+<li>求收敛半径<span class="math inline">\(l = \lim {a_{n+1}\over a_n}, R
+= {1\over l}\)</span>.</li>
+<li>带两端端点,判断收敛区间开闭</li>
+<li>利用和函数的性质,求导/积分/换元(<span class="math inline">\(S(f(x))
+= \sum a_n(f(x)^n)\)</span>) 对和函数变形,
+求解后再逆运算得到和函数.</li>
+<li>若还要求某级数</li>
+<li>和, 利用和函数带入特定的x即可.</li>
+</ol>
+<ul>
+<li>有时候可能会先提出/放进去<span
+class="math inline">\(x^k\)</span>之类的, 然后再求剩下级数的和函数.</li>
+</ul>
+</blockquote>
+<ol type="1">
+<li><p><span class="math display">\[
+\text { 求幂级数 } \sum_{n=1}^{\infty} \frac{2 n-1}{2^{n}} x^{2 n-2}
+\text { 的收敛域、和函数, 并由此计算 } \sum_{n=1}^{\infty} \frac{2
+n-1}{2^{n}} \text { 的和. }
+\]</span></p>
+<blockquote>
+<p><strong>注</strong> 此题判断收敛半径时要么不直接用公式,要么做<span
+class="math inline">\(t = x^2\)</span>的代换.</p>
+<p>后面的计算级数是显然的.</p>
+</blockquote></li>
+</ol>
+<h4
+id="将函数展成麦克劳林级数泰勒级数">将函数展成麦克劳林级数/泰勒级数</h4>
+<blockquote>
+<p><strong>方法一</strong> 结合<em>常见函数泰勒级数</em>
+将函数变形至已知函数</p>
+<p><strong>方法二</strong> 利用定义: <span class="math inline">\(f(x)
+=\displaystyle \sum_{n=0}^\infin {f^{n}(x_0)\over {n!}}x^n
++R_n(x_0)\)</span></p>
+<p>==注意==: 用第二种方法不要忘了本来就有阶乘!!</p>
+<ul>
+<li>往往题目是几个函数的叠加形式,需要先拆分.</li>
+</ul>
+</blockquote>
+<h3 id="傅里叶级数">傅里叶级数</h3>
+<blockquote>
+<p>计算比较困难.</p>
+<ul>
+<li>一些常识</li>
+</ul>
+<p><span class="math display">\[
+\cos n\pi x = (-1)^n.\\
+\sin n\pi x =0.
+\]</span></p>
+<p><strong>解题步骤</strong></p>
+<ol type="1">
+<li><p>判断函数周期(或题目要求延拓的周期)<span
+class="math inline">\(2l\)</span>,</p></li>
+<li><p>计算傅里叶系数<span
+class="math inline">\(a_0,a_n,b_n\)</span>(先判断函数奇偶性,可能减少一半计算量)</p>
+<p><strong>注意不要乘错,想清楚是乘<span class="math inline">\(\sin
+nx\)</span>还是<span class="math inline">\(\cos nx\)</span>,
+否则白算</strong>.</p></li>
+</ol>
+<p><span class="math display">\[
+a_n = {1\over \pi} \int_{-\pi}^{\pi}f(x)\cos nx\ dx, n = 0, 1, 2,
+\cdots\\
+b_n = {1\over \pi} \int_{-\pi}^{pi}f(x) \sin nx\ dx, n = 1, 2, \cdots.\\
+a_n = {1\over l} \int_{-l}^{l}f(x)\cos {n\pi x\over l} dx, n = 0, 1, 2,
+\cdots\\
+b_n = {1\over l} \int_{-l}^{l}f(x) \sin {n\pi x\over l} dx, n = 1, 2,
+\cdots.
+\]</span></p>
+<ol start="3" type="1">
+<li>写成傅里叶级数</li>
+</ol>
+<p><span class="math display">\[
+{a_0\over 2} + \sum_{n=1}^\infin (a_n \cos nx + b_n \sin nx)\\
+{a_0\over 2} + \sum_{n=1}^\infin (a_n \cos  {n\pi x\over l} + b_n
+\sin  {n\pi x\over l})
+\]</span></p>
+</blockquote>
+<ol type="1">
+<li>将函数 <span class="math inline">\(f(x)=\pi^{2}-x^{2}\)</span> 在
+<span class="math inline">\((-\pi, \pi)\)</span> 上展开成余弦级数,
+并求级数 <span class="math inline">\(\sum_{n=1}^{\infty}
+\frac{1}{n^{2}}, \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n^{2}}\)</span>,
+<span class="math inline">\(\sum_{n=1}^{\infty} \frac{1}{(2
+n-1)^{2}}\)</span> 的和.</li>
+</ol>
+<h3 id="微分方程">微分方程</h3>
+<blockquote>
+<p>解题步骤</p>
+<ol type="1">
+<li>确定微分方程类型(往往不那么直接, 需要适当变形:<span
+class="math inline">\({dy\over dx}\iff {dx\over
+dy}\)</span>/换元/乘积分因子)</li>
+<li>根据不同类型,按部就班选取相应方法求解.</li>
+</ol>
+</blockquote>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17v411P7nr?spm_id_from=333.337.search-card.all.click">常微分方程全是套路？【数二必看知识框架】十分钟带你梳理微分方程知识框架。看完在做题，痛苦少一半！！_哔哩哔哩_bilibili</a></p>
+<h4 id="各种类型的微分方程">各种类型的微分方程</h4>
+<ol type="1">
+<li>求微分方程 <span class="math inline">\(\frac{\mathrm{d}
+y}{\mathrm{~d} x}=\frac{3 x^{2}+2 x y-y^{2}}{2 x y-x^{2}}\)</span>
+的通积分.</li>
+<li>求微分方程 <span class="math inline">\(\frac{\mathrm{d}
+y}{\mathrm{~d} x}=\frac{x^{4}+y^{3}}{x y^{2}}\)</span> 的通积分.</li>
+</ol>
+<h4 id="级数sim微分方程">级数<span
+class="math inline">\(\sim\)</span>微分方程</h4>
+<ol type="1">
+<li><p>设 <span class="math inline">\(f(x)=\sum_{n=1}^{\infty} \frac{2(2
+n) ! !}{(2 n+1) ! !(n+1)} x^{2(n+1)}, x \in(-1,1)\)</span>. 求出 <span
+class="math inline">\(f(x)\)</span> 满足的微分方程, 并 求解之. 计算
+<span class="math inline">\(\sum_{n=1}^{\infty} \frac{n !}{(2 n+1) !
+!(n+1)}\)</span>.</p></li>
+<li><p><span class="math display">\[
+\text {求微分方程 }\left(\frac{1}{y} \sin \frac{x}{y}-\frac{y}{x^{2}}
+\cos \frac{y}{x}+5\right) \mathrm{d} x+\left(-\frac{x}{y^{2}} \sin
+\frac{x}{y}+\frac{1}{x} \cos \frac{y}{x}+\frac{6}{y^{3}}\right)
+\mathrm{d} y=0 \text { 的通积分. }
+\]</span></p>
+<blockquote>
+<p>==注意==: 得到诸如<span class="math inline">\(\sin 1, \cos 1,
+5\)</span>之类的,不要写在上面,而是写到常数C中</p>
+</blockquote></li>
+<li></li>
+</ol>
+<h4 id="微分方程解的结构">微分方程解的结构</h4>
+<blockquote>
+<p>主要是要知道解的结构.</p>
+<p>知道特征方程特征值与解的关系.</p>
+</blockquote>
+<blockquote>
+<p>==注意==:
+看清题目是要求<em>求出特解</em>or<em>写出特解的形式</em>.</p>
+</blockquote>
+<ol type="1">
+<li><p>已知 <span class="math inline">\(y_{1}=x e^{x}+e^{2 x}, y_{2}=x
+e^{x}+e^{-x}, y_{3}=x e^{x}+e^{2 x}-e^{-x}\)</span>
+是某二阶线性非齐次微分方程 的三个解, 求出此微分方程, 写出其通解.</p>
+<blockquote>
+<p>解: <span class="math inline">\(y_{1}-y_{3}=e^{-x}\)</span>
+是对应的齐次方程的一个解, 则 <span
+class="math inline">\(y_{4}=y_{2}-e^{-x}=x e^{x}\)</span>
+是非齐次方程的一个 解, <span class="math inline">\(y_{1}-y_{4}=e^{2
+x}\)</span> 是对应的齐次方程的另一个解。所以 <span
+class="math inline">\(-1,2\)</span> 是特征根。 二阶线性非齐次微分方程为
+<span class="math inline">\(y^{\prime \prime}-y^{\prime}-2
+y=f(x)\)</span>, 将 <span class="math inline">\(y_{4}=x e^{x}\)</span>
+带入方程可得 <span class="math inline">\(f(x)=(1-2 x) e^{x}\)</span>.
+所以微分方程为 <span class="math inline">\(y^{\prime
+\prime}-y^{\prime}-2 y=(1-2 x) e^{x}\)</span>, 通解为 <span
+class="math inline">\(y=C_{1} e^{-x}+C_{2} e^{2 x}+x e^{x}\)</span>.</p>
+</blockquote></li>
+</ol>
+<h2 id="知识与技巧">知识与技巧</h2>
+<h3 id="形如int_0piover-2-sinn-x-dx-的高阶三角函数积分">形如<span
+class="math inline">\(\int_0^{\pi\over 2} \sin^n x\ dx\)</span>
+的高阶三角函数积分</h3>
+<p><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/400024954">点火公式(华理士公式)及其推广的图像助记
+- 知乎 (zhihu.com)</a></p>
+<p><strong>Wallis公式</strong></p>
+<ul>
+<li>华理士公式-基础版</li>
+</ul>
+<p><span class="math display">\[
+\int_{0}^{\frac{\pi}{2}} \sin ^{n} x \mathrm{~d}
+x=\int_{0}^{\frac{\pi}{2}} \cos ^{n} x \mathrm{~d}
+x=\left\{\begin{array}{l}
+\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{2}{3} \cdot 1 \quad n
+\text { is odd. } \\
+\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{1}{2} \cdot
+\frac{\pi}{2} \quad n \text { is even. }
+\end{array}\right.
+\]</span></p>
+<ul>
+<li>华理士公式-推广公式</li>
+<li>推广公式1</li>
+</ul>
+<p><span class="math display">\[
+\int_{0}^{\pi} \sin ^{n} x \mathrm{~d} x=2 \int_{0}^{\frac{\pi}{2}} \sin
+^{n} x \mathrm{~d} x= \begin{cases}2 \cdot \frac{n-1}{n} \cdot
+\frac{n-3}{n-2} \cdots \frac{2}{3} \cdot 1 &amp; n \text { is odd } \\ 2
+\cdot \frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{1}{2} \cdot
+\frac{\pi}{2} &amp; n \text { is even. }\end{cases}
+\]</span></p>
+<ul>
+<li>推广公式2 <span class="math inline">\(\int_{0}^{\pi} \cos ^{n} x
+\mathrm{~d} x= \begin{cases}0 &amp; n \text { is odd. } \\ 2 \cdot
+\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{1}{2} \cdot
+\frac{\pi}{2} &amp; n \text { is even }\end{cases}\)</span></li>
+<li>推广公式3 <span class="math inline">\(\int_{0}^{2 \pi} \sin ^{n} x
+\mathrm{~d} x=\int_{0}^{2 \pi} \cos ^{n} x \mathrm{~d} x= \begin{cases}0
+&amp; n \text { is odd } \\ 4 \cdot \frac{n-1}{n} \cdot \frac{n-3}{n-2}
+\cdots \frac{1}{2} \cdot \frac{\pi}{2} &amp; n \text { is even
+}\end{cases}\)</span></li>
+</ul>
+<blockquote>
+<p>于是 <span class="math display">\[
+\int_0^{\pi\over 2}\sin^3xdx = {2\over 3}.\\
+\int_0^{\pi\over 2}\sin^4xdx = {3\over 4}\cdot {1\over 2}\cdot {\pi\over
+2}.
+\]</span></p>
+</blockquote>
+<h3 id="常见函数泰勒级数">常见函数泰勒级数</h3>
+<p><span class="math display">\[
+\begin{align}
+(1)&amp; e^x = \sum_{n=0}^\infin {1\over n!}x^n=1 + x + {1\over 2}x^2 +
+{1\over 3}x^3 + \cdots, &amp; x \in (-\infin, +\infin)\\
+(2)&amp; \sin x = \sum_{k=1}^\infin {(-1)^{k+1}\over (2k-1)!} x^{2k-1} =
+1 - {1\over 3!}x^3 + {1\over 5!}x^5 - \cdots,&amp; x \in (-\infin,
++\infin)\\
+(3)&amp; \cos x = \sum_{k=0}^\infin {(-1)^k\over (2k)!}x^{2k} =
+1-{1\over 2!}x^2 +{1\over 4!}x^4 - \cdots,&amp; x \in (-\infin,
++\infin)\\
+(4)&amp; {1\over 1+x} = \sum_{k=0}^\infin (-1)^kx^k=1-x + x^2-x^3 +
+\cdots, &amp; x\in (-1,1)\\
+(5)&amp; \ln (x+1) = \sum_{k=0}^\infin {(-1)^k\over (k+1)}x^{k+1} = x -
+{1\over 2}x^2 + {1\over 3}x^3 - \cdots,&amp; x \in (-1,1]\\
+(6)&amp; a^x = e^{x\ln a} = \sum_{n=0}^\infin {(\ln a)^n\over
+n!}x^n,&amp; x \in (-\infin, +\infin)\\
+(7)&amp; \arctan x  =\sum_{k=0}^\infin {(-1)^n\over
+(2n+1)}x^{2n+1},&amp; x\in [-1, 1]\\
+(\bold8)&amp; (1+x)^m = 1 + \sum_{n=1}^\infin {m(m-1))\cdots
+(m-n+1)\over n!}x^n,&amp; x\in (-1,1)
+\end{align}
+\]</span></p>
+<h3 id="和差化积">和差化积</h3>
+<blockquote>
+<p>该技巧常用于对级数化简(去<span
+class="math inline">\(\sum\)</span>).</p>
+</blockquote>
+<p><span class="math display">\[
+\sum \cos n\theta就乘\sin\theta \rightarrow 2 \cos \alpha \sin \beta
+=\sin (\alpha+\beta)-\sin (\alpha -\beta)\\
+\sum \sin n\theta也配\sin\theta \rightarrow 2 \sin \alpha \sin \beta
+=\cos (\alpha-\beta)-\cos (\alpha +\beta)\\
+(另外两种化出来是和的形式, 用处不大)
+\]</span></p>
+<h3 id="常见的一些曲线">常见的一些曲线</h3>
+<h4 id="旋轮线摆线">旋轮线/摆线</h4>
+<blockquote>
+<p><strong>例</strong> 设 <span class="math inline">\(C: x=a(t-\sin t),
+y=a(1-\cos t), t: 0 \rightarrow 2 \pi\)</span> 为旋轮线的一拱,
+方向由原点 到 <span class="math inline">\(A(2 \pi a, 0), \quad\)</span>
+计算 <span class="math inline">\(I_{1}=\int_{C}\left((x+y+1)
+e^{x}-e^{y}+y\right) \mathrm{d} x+\left(e^{x}-(x+y+1) e^{y}-x\right)
+\mathrm{d} y\)</span>.</p>
+</blockquote>
+<p>旋轮线的题目基本都联系green公式形成套路.
+比较好的情况是转化得到的二重积分恰为0, 否则需要计算.</p>
+<ul>
+<li>一拱的面积 <span class="math display">\[
+S = \int_0^{2\pi }ydx = a^2(1-\cos t)^2dt = a^2\int_0^{2\pi} (1+ {1\over
+2})dx = 3\pi a^2.
+\]</span></li>
+</ul>
+<h2 id="问题">问题</h2>
+<ol type="1">
+<li><p>遇到<span class="math inline">\(\int\ln
+xdx\)</span>什么时候去绝对值?</p>
+<blockquote>
+<p><strong>例</strong> <span class="math display">\[
+\text { 求微分方程 } 2 x y \cdot y^{\prime}-y^{2}+x=0 \text { 的解. }
+\]</span></p>
+</blockquote></li>
+<li><p>使用高斯公式时, 怎么根据有向曲面的方向判断积分是否要变号?</p>
+<blockquote>
+<p><strong>例</strong> <span class="math display">\[
+\text { 计算 } I_{2}=\iint_{S} 2 x^{3} \mathrm{~d} y \mathrm{~d} z+2
+y^{3} \mathrm{~d} z \mathrm{~d} x+3\left(z^{2}-1\right) \mathrm{d} x
+\mathrm{~d} y \text  {, 其中 } S \text { 为曲面 } z=1-x^{2}-y^{2}(z \geq
+0) \text { 的上侧 }
+\]</span> 计算 <span class="math inline">\(I_{1}=\iint_{S}\left(x^{3}+a
+z^{2}\right) \mathrm{d} y \mathrm{~d} z+\left(y^{3}+a x^{2}\right)
+\mathrm{d} z \mathrm{~d} x+\left(z^{3}+a y^{2}\right) \mathrm{d} x
+\mathrm{~d} y\)</span>, 其中 <span class="math inline">\(S\)</span>
+为曲面 <span class="math inline">\(z=\)</span> <span
+class="math inline">\(\sqrt{a^{2}-x^{2}-y^{2}}(a&gt;0)\)</span>
+的上侧.</p>
+</blockquote></li>
+<li><p>一个说法问题: 什么叫<strong>从<span
+class="math inline">\(z\)</span>轴正向看去</strong>?</p></li>
+<li><p>对<em>投影法</em> <em>长公式</em>的一些思考</p></li>
+</ol>
+<h2 id="注意点">注意点</h2>
+<ol type="1">
+<li>解微分方程时如果换元了,==一定要记得最后再换回去==!</li>
+<li>将函数展开成级数(傅里叶级数)时,
+要注意最后的结果要检查有没有<em>瑕项</em>
+(n带入没有意义的项),如果有就要单独写出来.</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yunzinan.github.io">oys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yunzinan.github.io/post/6ad1be83.html">https://yunzinan.github.io/post/6ad1be83.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yunzinan.github.io" target="_blank">Yunzinan</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></div><div class="post_share"><div class="social-share" data-image="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/465af6d8.html"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Calculus_II_notes_chapt1</div></div></a></div><div class="next-post pull-right"><a href="/post/1799e3f5.html"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">离散数学笔记-代数结构-群与环</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/f14df9e6.html" title="Calculus_II_midterm_review"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-10</div><div class="title">Calculus_II_midterm_review</div></div></a></div><div><a href="/post/465af6d8.html" title="Calculus_II_notes_chapt1"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus_II_notes_chapt1</div></div></a></div><div><a href="/post/51cd0943.html" title="Calculus-II-notes-chapt3"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus-II-notes-chapt3</div></div></a></div><div><a href="/post/26ca39d5.html" title="Calculus-II-notes-chapt2"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus-II-notes-chapt2</div></div></a></div><div><a href="/post/b8aeac76.html" title="Calculus-II-notes-chapt5"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus-II-notes-chapt5</div></div></a></div><div><a href="/post/21a7fdcc.html" title="Calculus-II-notes-chapt6"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="title">Calculus-II-notes-chapt6</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">oys</div><div class="author-info__description">菜狗一枚</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yunzinan"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">期末复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B%E6%95%B4%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">题型整理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">空间解析几何</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BFgreen%E5%85%AC%E5%BC%8F-gauss%E5%85%AC%E5%BC%8F-stokes%E5%85%AC%E5%BC%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">曲线Green公式 Gauss公式
+Stokes公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0"><span class="toc-number">1.1.3.</span> <span class="toc-text">无穷级数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9B%E6%9D%A1%E4%BB%B6%E6%94%B6%E6%95%9B"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">判断数项级数绝对收敛&#x2F;条件收敛</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E6%95%9B%E6%95%A3%E6%80%A7"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">判断广义积分敛散性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%81%9A%E9%A2%98%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">做题步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E7%BA%A7%E6%95%B0%E6%B1%82%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">根据级数求和函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E5%87%BD%E6%95%B0%E5%B1%95%E6%88%90%E9%BA%A6%E5%85%8B%E5%8A%B3%E6%9E%97%E7%BA%A7%E6%95%B0%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0"><span class="toc-number">1.1.3.5.</span> <span class="toc-text">将函数展成麦克劳林级数&#x2F;泰勒级数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0"><span class="toc-number">1.1.4.</span> <span class="toc-text">傅里叶级数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-number">1.1.5.</span> <span class="toc-text">微分方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">各种类型的微分方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A7%E6%95%B0sim%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">级数\(\sim\)微分方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">微分方程解的结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E4%B8%8E%E6%8A%80%E5%B7%A7"><span class="toc-number">1.2.</span> <span class="toc-text">知识与技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%A6%82int_0piover-2-sinn-x-dx-%E7%9A%84%E9%AB%98%E9%98%B6%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86"><span class="toc-number">1.2.1.</span> <span class="toc-text">形如\(\int_0^{\pi\over 2} \sin^n x\ dx\)
+的高阶三角函数积分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">常见函数泰勒级数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8C%E5%B7%AE%E5%8C%96%E7%A7%AF"><span class="toc-number">1.2.3.</span> <span class="toc-text">和差化积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9B%B2%E7%BA%BF"><span class="toc-number">1.2.4.</span> <span class="toc-text">常见的一些曲线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%8B%E8%BD%AE%E7%BA%BF%E6%91%86%E7%BA%BF"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">旋轮线&#x2F;摆线</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">注意点</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/f1d501c7.html" title="一个小问题: 可积一定有原函数吗?">一个小问题: 可积一定有原函数吗?</a><time datetime="2022-07-10T07:53:36.000Z" title="发表于 2022-07-10 15:53:36">2022-07-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/c3bfd1c6.html" title="Jupyter notebook快速入门">Jupyter notebook快速入门</a><time datetime="2022-06-28T16:39:30.000Z" title="发表于 2022-06-29 00:39:30">2022-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/9c59c100.html" title="普通物理I复习笔记">普通物理I复习笔记</a><time datetime="2022-06-22T01:28:58.000Z" title="发表于 2022-06-22 09:28:58">2022-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/39a8bbff.html" title="马原复习提纲">马原复习提纲</a><time datetime="2022-06-14T13:59:26.000Z" title="发表于 2022-06-14 21:59:26">2022-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/7a38bc51.html" title="离散数学课堂笔记">离散数学课堂笔记</a><time datetime="2022-06-13T14:43:08.000Z" title="发表于 2022-06-13 22:43:08">2022-06-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By oys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">心情不好的时候,试试切换夜间模式,用鼠标给自己放几束烟花吧</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script src="/js/sun_moon.js" async></script><div class="aplayer no-destroy" data-id="2729240519" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

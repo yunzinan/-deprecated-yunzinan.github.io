@@ -1,0 +1,632 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>离散数学笔记-图论部分-图的基本概念 | Yunzinan</title><meta name="keywords" content="图论 离散数学"><meta name="author" content="oys"><meta name="copyright" content="oys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="图论：图的基本概念 知识点  注：这部分内容参考Rosen. &amp;屈婉玲.   知识梳理参考资料：  图论概念梳理 (yhx-12243.github.io) 《离散数学》学习记录 - 图论 - 知乎 (zhihu.com) Zifan的小站-离散数学    简单图 (Simple graph)：若一个图中没有自环和重边时，它被称为简单图 度序列：注意">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学笔记-图论部分-图的基本概念">
+<meta property="og:url" content="https://yunzinan.github.io/post/dbec6b8e.html">
+<meta property="og:site_name" content="Yunzinan">
+<meta property="og:description" content="图论：图的基本概念 知识点  注：这部分内容参考Rosen. &amp;屈婉玲.   知识梳理参考资料：  图论概念梳理 (yhx-12243.github.io) 《离散数学》学习记录 - 图论 - 知乎 (zhihu.com) Zifan的小站-离散数学    简单图 (Simple graph)：若一个图中没有自环和重边时，它被称为简单图 度序列：注意">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg">
+<meta property="article:published_time" content="2022-05-16T03:56:12.000Z">
+<meta property="article:modified_time" content="2022-06-11T09:03:01.750Z">
+<meta property="article:author" content="oys">
+<meta property="article:tag" content="图论 离散数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yunzinan.github.io/post/dbec6b8e"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '离散数学笔记-图论部分-图的基本概念',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-11 17:03:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Yunzinan</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">离散数学笔记-图论部分-图的基本概念</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-16T03:56:12.000Z" title="发表于 2022-05-16 11:56:12">2022-05-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-11T09:03:01.750Z" title="更新于 2022-06-11 17:03:01">2022-06-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Maths/">Maths</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="离散数学笔记-图论部分-图的基本概念"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<h1 id="图论图的基本概念">图论：图的基本概念</h1>
+<h2 id="知识点">知识点</h2>
+<blockquote>
+<p>注：这部分内容参考Rosen. &amp;屈婉玲.</p>
+</blockquote>
+<blockquote>
+<p>知识梳理参考资料：</p>
+<ul>
+<li><p><a
+target="_blank" rel="noopener" href="https://yhx-12243.github.io/OI-transit/memos/14.html">图论概念梳理
+(yhx-12243.github.io)</a></p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62056687">《离散数学》学习记录 - 图论
+- 知乎 (zhihu.com)</a></p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://zifan.site/article/wqc/?page=1">Zifan的小站-离散数学</a></p></li>
+</ul>
+</blockquote>
+<ul>
+<li><p><strong>简单图</strong> (Simple
+graph)：若一个图中没有<em>自环</em>和<em>重边</em>时，它被称为简单图</p></li>
+<li><p>度序列：注意，度序列的顺序是根据标定的标号顺序排列的，而不是根据度升序。</p>
+<ul>
+<li>有向图的度数列等于出度列+入度列（均取正值）。</li>
+</ul></li>
+<li><p>补图：对于无向简单图 <span class="math inline">\(G=(V,
+E)\)</span> ，它的补图 (Complement graph)指的是这样的一张图，记作 <span
+class="math inline">\(\bar{G}\)</span> ，满足 <span
+class="math inline">\(V(\bar{G})=V(G)\)</span> ，且对任意顶点对 <span
+class="math inline">\((u, v)\)</span> ， <span class="math inline">\((u,
+v) \in E(G)\)</span> 当且仅当 <span class="math inline">\((u, v) \notin
+E\left(G^{\prime}\right)\)</span> 。</p></li>
+<li><p>有向图中的平行边要求起点和终点都要相同。</p></li>
+<li><p><span class="math inline">\(k-\)</span>正则图：各点的度都为<span
+class="math inline">\(k.\)</span></p></li>
+<li><p><span class="math inline">\(k-\)</span>连通图：最小点连通度<span
+class="math inline">\(\ge k\)</span>，这意味着去除任何<span
+class="math inline">\(k-1\)</span>个点得到的导出子图都是连通的。去除<span
+class="math inline">\(k\)</span>个点未必（不一定就是需要的那k个点，也不一定最小点连通度就是k）。</p></li>
+<li><p>无向图短程线<span class="math inline">\(d(u_i,
+v_i)\)</span>，有向图短程线$d&lt;u_i,v_i&gt; <span
+class="math inline">\(不一定等于\)</span>d&lt;v_i,u_i&gt;.$
+无向完全图、有向完全图中任意两点的短程线都为1，但是竞赛图中任意两点的短程线是不定的。</p></li>
+</ul>
+<h3 id="图的连通性">图的连通性</h3>
+<p>对于任何的无向图G，有 <span class="math display">\[
+\kappa(G)  \leqslant \lambda(G) \leqslant \delta(G)
+\]</span></p>
+<h3 id="图的矩阵表示">图的矩阵表示</h3>
+<h4 id="关联矩阵">关联矩阵</h4>
+<p><span class="math display">\[
+M = (a_{ij})_{m\times n}表示G = &lt;V,E&gt;,|V| = m, |E| = n,
+a_{ij}表示边E_j与点V_i的关联次数.
+\]</span></p>
+<h4 id="邻接矩阵">邻接矩阵</h4>
+<p><span class="math display">\[
+M = (a_{ij})_{n\times n}表示D = &lt;V,
+E&gt;,其中a_{ij}表示点V_i邻接到V_j的次数.
+\]</span></p>
+<blockquote>
+<p>注意：有向图的临界矩阵不一定是对称阵！无向图的临界矩阵一定是对称阵。</p>
+<p>对于有向图，每行元素之和<span class="math inline">\(\sum_{j =
+1}^na_{ij}\)</span>表示第<span
+class="math inline">\(i\)</span>个元素的<strong>出度</strong>，每列元素之和<span
+class="math inline">\(\sum_{i = 1}^na_{ij}\)</span>表示第<span
+class="math inline">\(i\)</span>个元素的<strong>入度</strong>。</p>
+</blockquote>
+<h4 id="可达矩阵">可达矩阵</h4>
+<h3 id="扩大路径法">扩大路径法</h3>
+<h3 id="图的同构">图的同构</h3>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+如何判断两个图是否同构？</li>
+</ul>
+<p>必要条件：</p>
+<ul>
+<li>相同的度序列</li>
+</ul>
+<p>充要条件：能够找到双射</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+如何全面的枚举所有非同构的图？</li>
+</ul>
+<p>参考阅读：<a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/140471632?ivk_sa=1024320u">非同构图介绍及其获取方案
+- 知乎 (zhihu.com)</a></p>
+<ul>
+<li>一个trick ：<span class="math inline">\(G_1 \cong G_2 \iff
+\overline{G_1} \cong
+\overline{G_2}.\)</span>这意味着可以从补图突破。</li>
+</ul>
+<h3 id="图的连通性-1">图的连通性</h3>
+<h4 id="割点">割点</h4>
+<ul>
+<li>等价表述：<span class="math inline">\(p(G-v) &gt;
+p(G).\)</span></li>
+</ul>
+<h4 id="割边">割边</h4>
+<ul>
+<li>等价表述： <span class="math inline">\(p(G-e) &gt;
+p(G).\)</span></li>
+</ul>
+<h2 id="一些概念的区分">一些概念的区分</h2>
+<h4 id="零图-平凡图-空图">零图 平凡图 空图</h4>
+<ul>
+<li><p>零图: 边集为空的集合 n阶零图记为<span
+class="math inline">\(N_n\)</span></p></li>
+<li><p>平凡图：一阶零图$N_1，即只有一个点，没有边的图</p></li>
+<li><p>空图：==图的定义中规定顶点集<span
+class="math inline">\(V\)</span>为非空集==，但在图的运算中可能产生顶点集为空的运算结果，因此规定顶点集为空的图为空图，记为
+<span class="math inline">\(\varnothing.\)</span></p></li>
+</ul>
+<h4 id="邻域-闭邻域">邻域 闭邻域</h4>
+<ul>
+<li><p>无向图 邻域：与u相邻的点构成的集合为u的邻域</p></li>
+<li><p>无向图 闭邻域：在邻域基础上包括u自身</p></li>
+<li><p>无向图 关联：与u关联的边的集合</p></li>
+<li><p>有向图 后继：从u出发达到的点</p></li>
+</ul>
+<blockquote>
+<p>注：根据屈婉玲版本，若存在自环，后继和前驱中是<strong>不包括自身</strong>的。推测无向图中若存在自环，邻域中应该也不包含自身。</p>
+</blockquote>
+<ul>
+<li><p>有向图 前驱：可到达u的点</p></li>
+<li><p>有向图 邻域：后继和前驱的并集</p></li>
+<li><p>有向图 闭邻域： 邻域基础上加上自身</p></li>
+</ul>
+<h4 id="有向完全图-竞赛图">有向完全图 竞赛图</h4>
+<p>二者都是有向简单图。</p>
+<ul>
+<li>有向完全图：任意两个点之间都有<strong>双向的</strong>边。</li>
+<li>竞赛图：<strong>基图</strong>（有向图去掉所有的方向退化为的无向图）为完全图的有向图，这意味着任意两点之间有且仅有一条边。</li>
+</ul>
+<h4 id="回路-简单回路-初级回路圈-环-自环">回路 简单回路 初级回路（圈）
+环 自环</h4>
+<ul>
+<li>途径 (Walk): 一个点和边的交错序列，其中首尾是点 <span
+class="math inline">\(-v_{0}, e_{1}, v_{1}, e_{2}, v_{2}, \cdots, e_{k},
+v_{k}\)</span> ，有时简写为 <span class="math inline">\(v_{0}
+\rightarrow v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow
+v_{k}\)</span> 。其中 <span class="math inline">\(e_{i}\)</span>
+的两个端点分别为 <span class="math inline">\(v_{i-1}\)</span> 和 <span
+class="math inline">\(v_{i}\)</span> (以下默认设 <span
+class="math inline">\(w=\left[v_{0}, e_{1}, v_{1}, e_{2}, v_{2}, \cdots,
+e_{k}, v_{k}\right]\)</span> 。</li>
+<li>迹 (Trail)：对于一条途径 <span class="math inline">\(w\)</span> ，若
+<span class="math inline">\(e_{1}, e_{2}, \cdots, e_{k}\)</span>
+两两互不相同，则称 <span class="math inline">\(w\)</span>
+是一条迹。</li>
+<li>路径 (Path) (又称简单路径 (Simple path))：对于一条迹 <span
+class="math inline">\(w\)</span> ，除了 <span
+class="math inline">\(v_{0}\)</span> 和 <span
+class="math inline">\(v_{k}\)</span>
+允许相同外，其余点两两互不相同，则称 <span
+class="math inline">\(w\)</span> 是一条路径。</li>
+<li>回路 (Circuit)：对于一个迹 <span class="math inline">\(w\)</span>
+，若 <span class="math inline">\(v_{0}=v_{k}\)</span> ，则称 <span
+class="math inline">\(w\)</span> 是一个回路。</li>
+<li>环圈 (Cycle) (又称简单回路 (Simple circuit))：对于一条简单路径 <span
+class="math inline">\(w\)</span> ，若 <span
+class="math inline">\(v_{0}=v_{k}\)</span> ，则称 <span
+class="math inline">\(w\)</span> 是一个环。</li>
+</ul>
+<figure>
+<img
+src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/image-20220515152407324.png"
+alt="image-20220515152407324" />
+<figcaption aria-hidden="true">image-20220515152407324</figcaption>
+</figure>
+<h4 id="子图-生成子图-导出子图">子图 生成子图 导出子图</h4>
+<ul>
+<li><p>子图
+定义：子图G’中所有的顶点和边均包含于原图G。即E’∈E，并且V’∈V。</p></li>
+<li><p>生成子图（Spanning Subgraph）
+定义：生成子图G’中<strong>顶点个数V’必须和原图G中V的数量相同</strong>，而E’∈E即可。</p></li>
+<li><p>导出子图(Induced Subgraph)
+定义：导出子图G’，V’∈V，<strong>但对于V’中任一顶点，只要在原图G中有对应边，那么就要出现在E’中</strong>。</p></li>
+</ul>
+<figure>
+<img
+src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/image-20220515152822708.png"
+alt="image-20220515152822708" />
+<figcaption aria-hidden="true">image-20220515152822708</figcaption>
+</figure>
+<h4 id="关联与邻接">关联与邻接</h4>
+<ul>
+<li>关联(incident): 指一条边和一个点关联。</li>
+<li>相邻、邻接(adjacent): 指两个点或者两条边相邻、邻接。</li>
+</ul>
+<h4 id="弱连通图-单向连通图-强连通图">弱连通图 单向连通图 强连通图</h4>
+<ul>
+<li><p>弱连通图：基图为连通图。</p></li>
+<li><p>单向连通图：任意两点之间至少有一个方向是可达的。</p></li>
+</ul>
+<p>​ <span class="math inline">\(D为单向连通图\iff
+D中存在经过每个点至少一次的通路.\)</span></p>
+<ul>
+<li>强连通图：任意两点之间两个方向可达。</li>
+</ul>
+<p><span class="math inline">\(D为强连通图\iff
+D中存在经过每个点至少一次的回路．\)</span></p>
+<blockquote>
+<p>三者为递进关系。</p>
+</blockquote>
+<h2 id="习题选录按照题型">习题选录（按照题型）</h2>
+<h3 id="度序列">度序列</h3>
+<ul>
+<li>注意：无向图自环对度的贡献为2；有向图自环分别对出度和入度贡献1。</li>
+</ul>
+<h3 id="握手定理">握手定理</h3>
+<ol type="1">
+<li><p>证明三维空间中不存在有奇数个面，且每个面都有奇数条棱的几何体。</p></li>
+<li><p>证明若无向图G中有且仅有两个奇度顶点，那么这两个顶点必然连通。</p></li>
+</ol>
+<blockquote>
+<p>反证法，反设两个奇数度顶点不连通，那么G中可以找到两个独立的连通分量<span
+class="math inline">\(G_A,
+G_B\)</span>，分别包含A、B，那么在这两个子图中，有且只有A或B为奇度顶点，而其他点都为偶度点，这与握手定理矛盾<span
+class="math inline">\(\square.\)</span></p>
+</blockquote>
+<h3
+id="画出所有满足要求的非同构图问题">画出所有满足要求的非同构图问题</h3>
+<ul>
+<li>从度序列思考：可以有哪些不同的度序列？</li>
+<li>思考每一种度序列会有几种非同构的图</li>
+<li>==对于稠密图，从反面思考，画它的补图的所有非同构图==</li>
+</ul>
+<h3 id="完全图正则图补图">完全图、正则图、补图</h3>
+<ol type="1">
+<li>讨论<span
+class="math inline">\(k-\)</span>正则图的不同构的生成子图为正则图的种数。</li>
+</ol>
+<blockquote>
+<p>注意：==对于确定的k，不同构的正则不一定是唯一的==！！</p>
+<p>由握手定理，对于k为奇数的情况，其生成子图只能取到<span
+class="math inline">\(0\sim n\)</span>中的偶数情况。</p>
+<p>对于k为偶数的情况，其生成子图可以取到全部情况。</p>
+</blockquote>
+<ol start="2" type="1">
+<li>结论： <span class="math inline">\(\delta(G)+\Delta(\overline G) =
+n-1\\ \Delta(G) + \delta(\overline G) = n-1\)</span></li>
+<li>设G是6阶无向简单图，证明：<span
+class="math inline">\(G或它的补图\overline{G}中存在3个点彼此相邻.\)</span></li>
+</ol>
+<blockquote>
+<figure>
+<img
+src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/image-20220516161606961.png"
+alt="image-20220516161606961" />
+<figcaption aria-hidden="true">image-20220516161606961</figcaption>
+</figure>
+</blockquote>
+<h3 id="扩大路径法-1">扩大路径法</h3>
+<ol type="1">
+<li>设G是无向简单图，<span class="math inline">\(\delta(G) \ge
+2\)</span>，证明：G中存在长度大于等于<span
+class="math inline">\(\delta(G)+1\)</span>的圈。</li>
+</ol>
+<blockquote>
+<p><strong>笔者解答</strong>采用构造法证明。考虑最坏的情况。</p>
+<p>构造一个顶点序列<span class="math inline">\(\{u_1,u_2,
+\cdots,u_{\delta(G)},u_{\delta(G)+1}\}\)</span>，表示按照顺序不断加入新的点。在最坏的情况下，所有的新加入的点都尽可能不与外界的点相连，也就是保证与已经加入序列的点都有边的相连，，同时，所有的点的度都只有<span
+class="math inline">\(\delta(G)\)</span>，那么依次会有<span
+class="math inline">\(\{\delta(G),\delta(G)-1, \delta(G)-2,\dots,
+\delta(G)-\delta(G) =
+0\}\)</span>个度是与外界相连的，可以发现直到第<span
+class="math inline">\(\delta(G)+1\)</span>个点时，不再可以与外界相连，也就是说不能再新加入点了，而此时形成的最大圈长度为<span
+class="math inline">\(\delta(G)+1.\square\)</span></p>
+<p><strong>参考答案</strong> 用<strong>扩大路径法</strong>证明.
+证明线索如下. 设 <span class="math inline">\(\Gamma=v_{0} v_{1} \cdots
+v_{l}\)</span> 为极大路径 (可用扩大路径法得到), 则 <span
+class="math inline">\(l \geqslant \delta(G)\)</span> (为什么?).
+由极大路径的性质 <span
+class="math inline">\(\left(\Gamma\right.\)</span> 的两个端点 <span
+class="math inline">\(v_{0}\)</span> 与 <span
+class="math inline">\(v_{l}\)</span> 不与 <span
+class="math inline">\(\Gamma\)</span> 外顶点相邻) 以及简单 图茨定义可知,
+<span class="math inline">\(v_{0}\)</span> 要达到其度数 <span
+class="math inline">\(d\left(v_{0}\right) \geqslant \delta(G)\)</span>,
+必须与 <span class="math inline">\(\Gamma\)</span> 上至少 <span
+class="math inline">\(\delta(G)\)</span> 个顶点相邻, 设其为 <span
+class="math inline">\(v_{i_{1}}=\)</span> <span
+class="math inline">\(v_{1}, v_{i_{2}}, \cdots, v_{i_{\delta}}\)</span>.
+于是, 圈 <span class="math inline">\(v_{0} v_{i_{1}} \cdots v_{i_{2}}
+\cdots v_{i_{\delta}} v_{0}\)</span> 长度大于等于 <span
+class="math inline">\(\delta(G)+1\)</span>, 式中的 <span
+class="math inline">\(\delta=\delta(G)\)</span>. 参见主教材中的例 <span
+class="math inline">\(14.8\)</span>.</p>
+</blockquote>
+<h3 id="图的连通性-2">图的连通性</h3>
+<ol type="1">
+<li>一个不是强连通图的单向连通图至少要加几条边，就能使之成为一个强连通图？</li>
+</ol>
+<blockquote>
+<p>利用二者的充要表示。</p>
+<ul>
+<li>单向连通图：任意两点之间至少有一个方向是可达的。</li>
+</ul>
+<p>​ <span class="math inline">\(D为单向连通图\iff
+D中存在经过每个点至少一次的通路.\)</span></p>
+<ul>
+<li>强连通图：任意两点之间两个方向可达。</li>
+</ul>
+<p><span class="math inline">\(D为强连通图\iff
+D中存在经过每个点至少一次的回路．\)</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>证明<span class="math inline">\(n阶(n \ge
+2)\)</span>简单连通图G中至少有两个顶点不是割点。</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(Pf.\)</span>首先证明两个命题：</p>
+<ol type="1">
+<li><p>悬挂顶点不是割点。</p></li>
+<li><p>设G为n阶无向连通图，则在G中任何两个顶点之间加一条新边，所得的n阶图G'中的割点数小于等于G中的割点数。</p></li>
+</ol>
+<p>利用<strong>生成树</strong>的思想，因为G连通，故G有生成树，设T为G中一颗生成树。由于<span
+class="math inline">\(n \ge
+2\)</span>，所以T中至少有两片树叶（两个叶节点），由命题1可知这些叶节点不是割点。当T加边还原成G时，由命题2可知，G中至少有两个点不是割点<span
+class="math inline">\(\square.\)</span></p>
+</blockquote>
+<ol start="3" type="1">
+<li>设<span class="math inline">\(D =
+&lt;V,E&gt;\)</span>是简单有向图，<span class="math inline">\(\delta(G)
+\ge 2\)</span>，<span class="math inline">\(\delta^-(G) &gt; 0,
+\delta^+(G) &gt; 0,\)</span>证明：D中存在长度大于等于<span
+class="math inline">\(\max\{\delta^-(G),\delta^+(G)\}+1\)</span>的圈。</li>
+</ol>
+<blockquote>
+<p>类似上题，可以证明 <span class="math display">\[
+(1)存在长度\ge \delta^-(G) + 1 的圈.\\
+(2)存在长度\ge \delta^+(G) + 1 的圈.
+\]</span> 因此得证。</p>
+</blockquote>
+<ol start="4" type="1">
+<li>设G是n阶m条边的无向连通图，证明：<span class="math inline">\(m \ge
+n-1.\)</span></li>
+</ol>
+<blockquote>
+<p>此题的结论是很直观的——我们似乎无法构造一个少于n-1条边的无向连通图。然而，这样的说明是缺乏说服力的。因此考虑数学归纳法，对n归纳：
+<span class="math display">\[
+(1)&amp;Basis.n = 1, m = 0\to 平凡图，显然成立.\\
+(2)&amp;I.H.设\forall n \le k时成立,\\
+(3)&amp;I.S.n = k+1时,任取其中一点v,除去该点得到G&#39; =
+G-v,G&#39;的连通分支G_1, G_2, \cdots,G_s,1\le s \le
+\delta(G)\\&amp;设G_i的阶数和边数分别为V_i, E_i, V_i \le
+k,由归纳假设,E_i \ge V_i -1,\\
+&amp; \Rightarrow \sum E_i \ge \sum V_i - s\\ &amp;又\because 删去的边E
+\ge \delta(G), \sum V_i = k, 1\le s \le \delta(G)\\ &amp;\Rightarrow m =
+E + \sum E_i\ge \delta(G) + k - s \ge k = (k+1) - 1\\
+&amp;由(1)(2)(3),\square.
+\]</span></p>
+</blockquote>
+<h3 id="完全图与二部图">完全图与二部图</h3>
+<ol type="1">
+<li>在无向完全图中，寻找边数最多的生成子图，使得其成为完全二部图。</li>
+</ol>
+<blockquote>
+<p>完全图转完全二部图的过程：</p>
+<ul>
+<li>将顶点集划分为两个互补的顶点子集<span
+class="math inline">\(V_1,V_2,|V_1| = r, |V_2| = s\)</span></li>
+<li>删去所有<span class="math inline">\(e_i = {v_i, v_j}, v_i, v_j \in
+V_1或者\in V_2\)</span></li>
+</ul>
+<p>得到的完全二部图边数为<span
+class="math inline">\(rs\)</span>，删去的边的数量为<span
+class="math inline">\(C_r^2 + C_s^2.\)</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li><p>完全二部图<span class="math inline">\(K_{r,s}, r,s \ge
+2\)</span>，则：</p>
+<ul>
+<li><p>含有多少个非同构的圈？<span
+class="math inline">\(\min\{r,s\}-1\)</span></p></li>
+<li><p>至多有多少个顶点彼此不相邻？<span
+class="math inline">\(\max\{r,s\}\)</span></p></li>
+<li><p>至多有多少条边彼此不相邻？</p>
+<blockquote>
+<p>考虑任意两条边<span class="math inline">\(e_1 = \{u_1, v_1\}, e_2 =
+\{u_2, v_2\}\)</span>，注意到两个端点只要有一个是相同的，
+那么两条边就相邻了，因此对于所有的边，它们处于<span
+class="math inline">\(V_r,V_s\)</span>中的点要户部相同，因此至多有<span
+class="math inline">\(\min\{r,s\}\)</span>条。</p>
+</blockquote></li>
+<li><p>点连通度<span
+class="math inline">\(\kappa\)</span>为几？边连通度<span
+class="math inline">\(\lambda\)</span>为几？<span
+class="math inline">\(\kappa(K) = \min\{r,s\},\lambda(K) =
+\min\{r,s\}.\)</span></p></li>
+</ul></li>
+</ol>
+<h3 id="邻接矩阵-1">邻接矩阵</h3>
+<ol type="1">
+<li><img
+src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/image-20220516151251180.png"
+title="fig:" alt="image-20220516151251180" /></li>
+</ol>
+<blockquote>
+<figure>
+<img
+src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/image-20220516151322236.png"
+alt="解答" />
+<figcaption aria-hidden="true">解答</figcaption>
+</figure>
+</blockquote>
+<h3 id="图的应用">图的应用</h3>
+<ol type="1">
+<li>有三个油瓶，分别是1斤装，7两装，3两装（注：一斤=十两）。现在一斤的瓶子里装满了油，另外两个是空瓶。如何用这3个油瓶将1斤油分成2个5两？至少进行多少次？</li>
+</ol>
+<blockquote>
+<p><strong>参考答案</strong></p>
+<p>将三个瓶子里油量写成三元有序对<span class="math inline">\((v_1, v_2,
+v_3),\)</span>则初始状态为（10，0，0），最终状态为（5，5，0），画出完整的<strong>状态转移图</strong>，如下图：</p>
+<figure>
+<img
+src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/image-20220516173228647.png"
+alt="image-20220516173228647" />
+<figcaption aria-hidden="true">image-20220516173228647</figcaption>
+</figure>
+<p>不难得出短程线，及最短距离9。</p>
+<p><strong>笔者解法</strong> 编程来处理</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">mm</span> mm;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">mm</span> &#123;</span><br><span class="line"><span class="type">int</span> a;</span><br><span class="line"><span class="type">int</span> b;</span><br><span class="line"><span class="type">int</span> c;</span><br><span class="line">&#125;;<span class="comment">//这里还发现一个坑：如果使用set，且类型为自定义的结构体时，需要重载operator&lt;！！</span></span><br><span class="line"><span class="comment">//原因是set维护时会对数据升序处理，</span></span><br><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> mm &amp;a, <span class="type">const</span> mm &amp;b)  &#123;</span><br><span class="line"><span class="keyword">if</span>(a.a != b.a) <span class="keyword">return</span> a.a &lt; b.a;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(a.b != b.b) <span class="keyword">return</span> a.b &lt; b.b;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> a.c &lt; b.c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">set&lt;mm&gt; s;</span><br><span class="line">stack&lt;mm&gt; stk;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(mm cur)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(cur.a &gt; <span class="number">0</span> &amp;&amp;  cur.b &lt; <span class="number">7</span>) &#123;</span><br><span class="line">  <span class="type">int</span> inc = <span class="built_in">min</span>(cur.a + cur.b, <span class="number">7</span>) - cur.b;</span><br><span class="line">  mm tmp = &#123;cur.a - inc,  cur.b + inc, cur.c&#125;;</span><br><span class="line">  <span class="keyword">if</span>(s.<span class="built_in">find</span>(tmp) == s.<span class="built_in">end</span>()) &#123;</span><br><span class="line">      s.<span class="built_in">insert</span>(tmp);</span><br><span class="line">      stk.<span class="built_in">push</span>(tmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(cur.a &gt; <span class="number">0</span> &amp;&amp; cur.c &lt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="type">int</span> inc = <span class="built_in">min</span>(cur.c + cur.a, <span class="number">3</span>) - cur.c;</span><br><span class="line">  mm tmp = &#123;cur.a - inc, cur.b, cur.c + inc&#125;;</span><br><span class="line">  <span class="keyword">if</span>(s.<span class="built_in">find</span>(tmp) == s.<span class="built_in">end</span>()) &#123;</span><br><span class="line">      s.<span class="built_in">insert</span>(tmp);</span><br><span class="line">      stk.<span class="built_in">push</span>(tmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(cur.b &gt; <span class="number">0</span> &amp;&amp; cur.a &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  mm tmp = &#123;cur.a + cur.b, <span class="number">0</span>, cur.c&#125;;</span><br><span class="line">  <span class="keyword">if</span>(s.<span class="built_in">find</span>(tmp) == s.<span class="built_in">end</span>()) &#123;</span><br><span class="line">      s.<span class="built_in">insert</span>(tmp);</span><br><span class="line">      stk.<span class="built_in">push</span>(tmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(cur.b &gt; <span class="number">0</span> &amp;&amp; cur.c &lt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="type">int</span> inc = <span class="built_in">min</span>(cur.c + cur.b, <span class="number">3</span>) - cur.c;</span><br><span class="line">  mm tmp = &#123;cur.a, cur.b - inc, cur.c + inc&#125;;</span><br><span class="line">  <span class="keyword">if</span>(s.<span class="built_in">find</span>(tmp) == s.<span class="built_in">end</span>()) &#123;</span><br><span class="line">      s.<span class="built_in">insert</span>(tmp);</span><br><span class="line">      stk.<span class="built_in">push</span>(tmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(cur.c &gt; <span class="number">0</span> &amp;&amp; cur.a &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  mm tmp = &#123;cur.a + cur.c, cur.b, <span class="number">0</span>&#125;;</span><br><span class="line">  <span class="keyword">if</span>(s.<span class="built_in">find</span>(tmp) == s.<span class="built_in">end</span>()) &#123;</span><br><span class="line">      s.<span class="built_in">insert</span>(tmp);</span><br><span class="line">      stk.<span class="built_in">push</span>(tmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(cur.c &gt; <span class="number">0</span> &amp;&amp; cur.b &lt; <span class="number">7</span>) &#123;</span><br><span class="line">  <span class="type">int</span> inc = <span class="built_in">min</span>(cur.b + cur.c, <span class="number">7</span>) - cur.b;</span><br><span class="line">  mm tmp = &#123;cur.a, cur.b + inc, cur.c - inc&#125;;</span><br><span class="line">  <span class="keyword">if</span>(s.<span class="built_in">find</span>(tmp) == s.<span class="built_in">end</span>()) &#123;</span><br><span class="line">      s.<span class="built_in">insert</span>(tmp);</span><br><span class="line">      stk.<span class="built_in">push</span>(tmp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> ret = <span class="number">100000</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">mm start = &#123;<span class="number">10</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">stk.<span class="built_in">push</span>(start);</span><br><span class="line">s.<span class="built_in">insert</span>(start);</span><br><span class="line"><span class="built_in">foo</span>(start);</span><br><span class="line"><span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(!stk.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">  mm cur = stk.<span class="built_in">top</span>();</span><br><span class="line">  stk.<span class="built_in">pop</span>();</span><br><span class="line">  <span class="keyword">if</span>(cur.a == <span class="number">5</span> &amp;&amp; cur.b == <span class="number">5</span>) &#123;</span><br><span class="line">      cout &lt;&lt; cur.a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt;  cur.b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; cur.c &lt;&lt; endl;</span><br><span class="line">      ret = <span class="built_in">min</span>(ret, cnt);</span><br><span class="line">      cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">      cnt = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">foo</span>(cur);</span><br><span class="line">      cout &lt;&lt; cur.a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt;  cur.b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; cur.c &lt;&lt; endl;</span><br><span class="line">      cnt++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果（部分）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">7 0 3</span><br><span class="line">7 3 0</span><br><span class="line">4 3 3</span><br><span class="line">4 6 0</span><br><span class="line">1 6 3</span><br><span class="line">1 7 2</span><br><span class="line">8 0 2</span><br><span class="line">8 2 0</span><br><span class="line">5 2 3</span><br><span class="line">5 5 0</span><br><span class="line">cntLen = 9</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ol start="2" type="1">
+<li>类似1的问题：（农夫、狗、羊、白菜过河问题）</li>
+</ol>
+<blockquote>
+<p>有一个农夫带一只羊、一筐菜和一只狼过河.果没有农夫看管，则狼要吃羊，羊要吃菜.但是船很小，只够农夫带一样东西过河。问农夫该如何解此难题？</p>
+<p>参考解答：</p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/timepe/article/details/7425272">农夫、狼、羊、白菜（回溯法求解）</a></p>
+</blockquote>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yunzinan.github.io">oys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yunzinan.github.io/post/dbec6b8e.html">https://yunzinan.github.io/post/dbec6b8e.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yunzinan.github.io" target="_blank">Yunzinan</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9B%BE%E8%AE%BA-%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">图论 离散数学</a></div><div class="post_share"><div class="social-share" data-image="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/1799e3f5.html"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">离散数学笔记-代数结构-群与环</div></div></a></div><div class="next-post pull-right"><a href="/post/5f067998.html"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">随便写点</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://yunzinan-pic-bed.oss-cn-nanjing.aliyuncs.com/2022/05/doge.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">oys</div><div class="author-info__description">菜狗一枚</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yunzinan"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E8%AE%BA%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">图论：图的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text">图的连通性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text">图的矩阵表示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">关联矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">邻接矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%BE%BE%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">可达矩阵</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%A4%A7%E8%B7%AF%E5%BE%84%E6%B3%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">扩大路径法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%90%8C%E6%9E%84"><span class="toc-number">1.1.4.</span> <span class="toc-text">图的同构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7-1"><span class="toc-number">1.1.5.</span> <span class="toc-text">图的连通性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%B2%E7%82%B9"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">割点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%B2%E8%BE%B9"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">割边</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5%E7%9A%84%E5%8C%BA%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text">一些概念的区分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%B6%E5%9B%BE-%E5%B9%B3%E5%87%A1%E5%9B%BE-%E7%A9%BA%E5%9B%BE"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">零图 平凡图 空图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E5%9F%9F-%E9%97%AD%E9%82%BB%E5%9F%9F"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">邻域 闭邻域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E5%AE%8C%E5%85%A8%E5%9B%BE-%E7%AB%9E%E8%B5%9B%E5%9B%BE"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">有向完全图 竞赛图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E8%B7%AF-%E7%AE%80%E5%8D%95%E5%9B%9E%E8%B7%AF-%E5%88%9D%E7%BA%A7%E5%9B%9E%E8%B7%AF%E5%9C%88-%E7%8E%AF-%E8%87%AA%E7%8E%AF"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">回路 简单回路 初级回路（圈）
+环 自环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E5%9B%BE-%E7%94%9F%E6%88%90%E5%AD%90%E5%9B%BE-%E5%AF%BC%E5%87%BA%E5%AD%90%E5%9B%BE"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">子图 生成子图 导出子图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E4%B8%8E%E9%82%BB%E6%8E%A5"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">关联与邻接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B1%E8%BF%9E%E9%80%9A%E5%9B%BE-%E5%8D%95%E5%90%91%E8%BF%9E%E9%80%9A%E5%9B%BE-%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%9B%BE"><span class="toc-number">1.2.0.7.</span> <span class="toc-text">弱连通图 单向连通图 强连通图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98%E9%80%89%E5%BD%95%E6%8C%89%E7%85%A7%E9%A2%98%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">习题选录（按照题型）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%A6%E5%BA%8F%E5%88%97"><span class="toc-number">1.3.1.</span> <span class="toc-text">度序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%A1%E6%89%8B%E5%AE%9A%E7%90%86"><span class="toc-number">1.3.2.</span> <span class="toc-text">握手定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E5%87%BA%E6%89%80%E6%9C%89%E6%BB%A1%E8%B6%B3%E8%A6%81%E6%B1%82%E7%9A%84%E9%9D%9E%E5%90%8C%E6%9E%84%E5%9B%BE%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.3.</span> <span class="toc-text">画出所有满足要求的非同构图问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%9B%BE%E6%AD%A3%E5%88%99%E5%9B%BE%E8%A1%A5%E5%9B%BE"><span class="toc-number">1.3.4.</span> <span class="toc-text">完全图、正则图、补图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%A4%A7%E8%B7%AF%E5%BE%84%E6%B3%95-1"><span class="toc-number">1.3.5.</span> <span class="toc-text">扩大路径法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7-2"><span class="toc-number">1.3.6.</span> <span class="toc-text">图的连通性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%9B%BE%E4%B8%8E%E4%BA%8C%E9%83%A8%E5%9B%BE"><span class="toc-number">1.3.7.</span> <span class="toc-text">完全图与二部图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5-1"><span class="toc-number">1.3.8.</span> <span class="toc-text">邻接矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.9.</span> <span class="toc-text">图的应用</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/f1d501c7.html" title="一个小问题: 可积一定有原函数吗?">一个小问题: 可积一定有原函数吗?</a><time datetime="2022-07-10T07:53:36.000Z" title="发表于 2022-07-10 15:53:36">2022-07-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/c3bfd1c6.html" title="Jupyter notebook快速入门">Jupyter notebook快速入门</a><time datetime="2022-06-28T16:39:30.000Z" title="发表于 2022-06-29 00:39:30">2022-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/9c59c100.html" title="普通物理I复习笔记">普通物理I复习笔记</a><time datetime="2022-06-22T01:28:58.000Z" title="发表于 2022-06-22 09:28:58">2022-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/39a8bbff.html" title="马原复习提纲">马原复习提纲</a><time datetime="2022-06-14T13:59:26.000Z" title="发表于 2022-06-14 21:59:26">2022-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/7a38bc51.html" title="离散数学课堂笔记">离散数学课堂笔记</a><time datetime="2022-06-13T14:43:08.000Z" title="发表于 2022-06-13 22:43:08">2022-06-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By oys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">心情不好的时候,试试切换夜间模式,用鼠标给自己放几束烟花吧</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script src="/js/sun_moon.js" async></script><div class="aplayer no-destroy" data-id="2729240519" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
